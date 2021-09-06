@@ -1,0 +1,33 @@
+{
+  "name": "eleventy-contentful-template",
+  "version": "1.0.0",
+  "description": "A marketing site template using 11ty and Contentful",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "serve:sass": "sass --watch src/assets/sass:dist/assets/css",
+    "serve:webpack": "webpack --mode development --watch",
+    "serve:eleventy": "eleventy --serve",
+    "serve": "npm-run-all clean build:sass --parallel serve:*",
+    "build:webpack": "webpack --mode production",
+    "build:sass": "sass src/assets/sass:dist/assets/css",
+    "build:eleventy": "eleventy",
+    "build": "run-s clean build:*"
+  },
+  "author": "Mike Stilling",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@barba/core": "^2.9.7",
+    "@contentful/rich-text-html-renderer": "^15.2.0",
+    "@contentful/rich-text-types": "^15.1.0",
+    "contentful": "^8.5.0",
+    "dotenv": "^10.0.0",
+    "locomotive-scroll": "^4.1.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "sass": "^1.38.2",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  }
+}

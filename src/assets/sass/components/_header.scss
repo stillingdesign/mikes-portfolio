@@ -1,0 +1,213 @@
+header {
+    z-index: 90;
+    padding: 3rem 0 3rem 0;
+
+    .grid {
+
+        //Left Side of Nav
+        .navLeft {
+            grid-column: 2 / span 4;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            .logo {
+                display: block;
+                font-size: 1.75rem;
+                line-height: 110%;
+                padding: 0.625rem 0;
+                color: $gray100;
+                overflow: hidden;
+            }
+        }
+
+        //Right Side of Nav
+        .navRight {
+            grid-column: 10 / span 4;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            
+            a {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                height: 2rem;
+                height: 100%;
+                color: $gray70;
+                line-height: 100%;
+
+                .navLabel {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    height: 100%;
+                    padding-top: 0.325rem;
+                    overflow: hidden;
+                    transition: color 500ms linear 0ms;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        bottom: 0.5rem;
+                        left: 100%;
+                        width: 0;
+                        height: 2px;
+                        background: $gradient;
+                        transition: left 300ms $inOutQuint 0ms, width 0ms linear 300ms;
+                    }
+                }
+
+                .navNumber {
+                    display: block;
+                    position: absolute;
+                    left: calc(100% + 0.125rem);
+                    top: 0.625rem;
+                    font-family: $mono;
+                    font-size: 0.75rem;
+                    color: $gray50;
+                }
+
+                @media (hover: hover) {
+                    &:hover {
+                        color: $gray100;
+                        transition: color 500ms linear 0ms;
+
+                        .navLabel {
+                            &:before {
+                                width: 100%;
+                                left: 0;
+                                transition: left 0ms linear 0ms, width 400ms $inOutQuint 0ms;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Mobile Nav Btn
+        .navBtnContainer {
+            cursor: pointer;
+            width: 3rem;
+            height: 3rem;
+
+            display: none;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+
+            .navBtnLabel {
+                font-family: $mono;
+                font-size: 1rem;
+                text-transform: uppercase;
+                line-height: 100%;
+                color: $gray100;
+                overflow: hidden;
+
+                span {
+                    display: inline-block;
+                    will-change: transform;
+                    transition: transform 1000ms $inOutQuint 0ms;
+                }
+
+                &:before {
+                    content: 'Exit';
+                    position: absolute;
+                    top: 0;
+                    will-change: transform;
+                    transform: translate3d(0,100%,0);;
+                    transition: transform 1000ms $inOutQuint 0ms;
+                }
+            }
+            
+            &.active {
+                .navBtnLabel {
+                    span {
+                        transform: translate3d(0,-100%,0);
+                        transition: transform 1000ms $inOutQuint 0ms;
+                    }
+
+                    &:before {
+                        transform: translate3d(0,0,0);
+                        transition: transform 1000ms $inOutQuint 0ms;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    //1440 Breakpoint
+    @media screen and (max-width: 1440px) {
+        .grid {
+            .navRight {
+                grid-column: 8 / span 6;
+            }
+        }
+    }
+
+
+
+    //960 Breakpoint
+    @media screen and (max-width: 960px) {
+
+        .grid {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            .navLeft {
+                grid-column: auto;
+
+                .logo {
+                    margin-top: 0.125rem;
+                }
+            }
+
+            .navRight {
+                grid-column: auto;
+                height: 3rem;
+                margin-top: 0.25rem;
+
+                a {
+                    margin-right: 2.5rem;
+                    &:last-child { margin-right: 0; }
+                }
+            }
+        }
+    }
+
+
+
+    //640 Breakpoint
+    @media screen and (max-width: 640px) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: $gray10;
+        padding: 0.3125rem 0 0.3125rem 0;
+
+        .grid {
+            flex-direction: row;
+            justify-content: space-between;
+
+            .navLeft {
+                .logo {
+                    margin-top: 0.125rem;
+                }
+            }
+
+            .navRight {
+                display: none;
+            }
+
+            .navBtnContainer {
+                display: flex;
+            }
+        }
+    }
+}

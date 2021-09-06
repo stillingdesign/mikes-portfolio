@@ -1,0 +1,26 @@
+// Grayscale
+$gray0:   hsla(0,0%,0%,1);
+$gray10:  hsla(0,0%,10%,1);
+$gray20:  hsla(0,0%,20%,1);
+$gray30:  hsla(0,0%,30%,1);
+$gray40:  hsla(0,0%,40%,1);
+$gray50:  hsla(0,0%,50%,1);
+$gray60:  hsla(0,0%,60%,1);
+$gray70:  hsla(0,0%,70%,1);
+$gray80:  hsla(0,0%,80%,1);
+$gray90:  hsla(0,0%,90%,1);
+$gray95:  hsla(0,0%,95%,1);
+$gray100: hsla(0,0%,100%,1);
+
+// Primary
+$primaryL: #F7ABA1;
+$primaryM: #E48981;
+$primaryD: #C76E6B;
+
+// Secondary
+$secondaryL: #68A8CC;
+$secondaryM: #4782B9;
+$secondaryD: #435C83;
+
+$gradient: linear-gradient(270deg, $secondaryM 0%, $primaryL 100%);
+$gradientReverse: linear-gradient(90deg, $secondaryM 0%, $primaryL 100%);

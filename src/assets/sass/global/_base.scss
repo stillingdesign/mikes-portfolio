@@ -1,0 +1,71 @@
+* {
+    position: relative;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: $sans, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    color: $gray100;
+}
+
+main {
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: $gray10;
+    overflow-x: hidden;
+}
+
+a {
+    color: $secondaryM;
+    text-decoration: none;
+
+    @media (hover: hover) {
+        &:hover {
+            color: $secondaryL;
+        }
+    }
+}
+
+// The Grid Wrapper
+.gridContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width: 960px) {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    @media screen and (max-width: 640px) {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
+
+// The Grid
+.grid {
+    width: 100%;
+    max-width: 1920px;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-gap: 1.125rem;
+
+    @media screen and (max-width: 960px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 960px) { .hideTablet { display: none; } }
+@media screen and (max-width: 640px) { .hideMobile { display: none; } }

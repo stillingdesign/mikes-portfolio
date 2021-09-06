@@ -1,0 +1,78 @@
+.homeHeadline {
+    padding-top: 5rem;
+    padding-bottom: 10rem;
+
+    .grid {
+
+        h1 {
+            grid-column: 2 / span 12;
+            font-size: 6.7vw;
+            line-height: 110%;
+        }
+    }
+
+
+
+    //1920 Max Breakpoint
+    @media screen and (min-width: 1921px) { .grid { h1 { font-size: 128px; } } }
+
+
+
+    //960 Breakpoint
+    @media screen and (max-width: 960px) {
+        padding-top: 3rem;
+        padding-bottom: 8rem;
+        .grid { h1 { font-size: 9.5vw; } }
+    }
+
+
+
+    //640 Breakpoint
+    @media screen and (max-width: 640px) {
+        padding-top: 6rem;
+        padding-bottom: 8rem;
+        .grid { h1 { font-size: 16.5vw; } }
+    }
+}
+
+
+
+
+.homeHeroImage {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .grid {
+
+        .imgOuter {
+            background-color: $gray20;
+            grid-column: 5 / span 9;
+            height: 0;
+            padding-top: 56.25%;
+
+            .imgLabel {
+                position: absolute;
+                padding-left: 1.5rem;
+                border-left: 2px solid $gray100;
+                top: 0;
+                left: 0;
+                color: $gray40;
+                line-height: 140%;
+                transform-origin: top left;
+                transform: translateX(-1.5rem) rotate(90deg);
+            }
+
+            .imgInner {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: red;
+            }
+        }
+    }
+}

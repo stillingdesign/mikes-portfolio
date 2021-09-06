@@ -1,0 +1,98 @@
+.mobileNav {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100vw;
+    height: 100vh;
+    height: -moz-available;
+    height: -webkit-fill-available;
+    height: fill-available;
+    overflow: hidden;
+    z-index: 80;
+    background-color: $gray100;
+    padding-top: 6rem;
+    transition: right 1000ms $inOutQuint 0ms;
+    @media screen and (min-width: 641px) { display: none; }
+    
+
+    nav {
+
+        a {
+            font-size: 20vw;
+            color: $gray10;
+            transform: translate3d(100vw,0,0);
+            opacity: 0;
+            
+            .navNumber {
+                position: absolute;
+                top: 1vw;
+                left: calc(100% + 1vw);
+                font-family: 'Space Mono';
+                font-size: 8vw;
+                color: $gray80;
+            }
+
+            &:nth-child(1) { transition: transform 750ms $inOutQuint 0ms, opacity 750ms linear 0ms; }
+            &:nth-child(2) { transition: transform 800ms $inOutQuint 0ms, opacity 800ms linear 0ms; }
+            &:nth-child(3) { transition: transform 850ms $inOutQuint 0ms, opacity 850ms linear 0ms; }
+            &:nth-child(4) { transition: transform 900ms $inOutQuint 0ms, opacity 900ms linear 0ms; }
+        }
+    }
+
+    .mobileNavLower {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 1.5rem;
+        font-size: 1.25rem;
+        line-height: 140%;
+        width: calc(100% - 3rem);
+
+        .divider {
+            width: 0;
+            height: 2px;
+            background: $gradient;
+            margin: 2rem 0;
+            transition: width 1000ms $inOutQuint 0ms,
+        }
+    
+        .socialLinks {
+            margin: 0.25rem 0;
+            color: $gray10;
+            opacity: 0;
+            transform: translate3d(0,100%,0);
+            transition: transform 1000ms $inOutCubic 0ms, opacity 1000ms linear 0ms;
+        }
+    }
+
+    &.active {
+        right: 0;
+        transition: right 1000ms $inOutQuint 0ms;
+
+        a {
+            transform: translate3d(0,0,0);
+            opacity: 1;
+
+            &:nth-child(1) { transition: transform 1200ms $outCubic 0ms, opacity 1200ms linear 0ms; }
+            &:nth-child(2) { transition: transform 1300ms $outCubic 0ms, opacity 1300ms linear 0ms; }
+            &:nth-child(3) { transition: transform 1400ms $outCubic 0ms, opacity 1400ms linear 0ms; }
+            &:nth-child(4) { transition: transform 1500ms $outCubic 0ms, opacity 1500ms linear 0ms; }
+        }
+
+        .mobileNavLower {
+
+            .divider {
+                width: 100%;
+                transition: width 1000ms $inOutQuint 600ms,
+            }
+
+            .socialLinks {
+                opacity: 1;
+                transform: translate3d(0,0,0);
+                transition: transform 1000ms $outCubic 800ms, opacity 1000ms linear 800ms;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+---
+permalink: "projects/"
+layout: base.njk
+
+eleventyComputed:
+  title: "Projects"
+  url: "/projects/"
+  description: "Welcome to my projects"
+  image: "https://images.ctfassets.net/06s354hi0b4y/7k67O0l63Wp1las1sYsesO/2a9a757f284ff3ecc5f5f6a0d8caf7cd/inline-image.jpg"
+  barba: "projects"
+---
+
+<h1> Hello World </h1>
+<p> This is the work page</p>
+
+<ul>
+    {% for page in projectPages %}
+        <li><a href="/projects/{{ page.slug | url }}">{{page.postTitle}}</a></li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ title }}  • {{ meta.siteName }}</title>
+    <meta name="description" content=" {{- description -}} ">
+
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{- meta.url -}}{{- url -}}" />
+    <meta property="og:image" content="{{- image -}}" />
+
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}" />
+
+</head>
+
+
+<body data-barba="wrapper">
+    <div class="locomotive" data-scroll-container>
+
+
+
+        <!-- Header -->
+        <header class="gridContainer">
+            <div class="grid">
+
+                <!-- Identification -->
+                <div class="navLeft">
+                    <a href="/" title="Mike Stilling Homepage" class="logo">Mike Stilling</a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="navRight desktop">
+                    <a href="/projects" title="View Mike's design">
+                        <span class="navLabel">Projects </span>
+                        <span class="navNumber">01</span>
+                    </a>
+                    <a href="/blog" title="Read Mike's blog">
+                        <span class="navLabel">Content </span>
+                        <span class="navNumber">02</span>
+                    </a>
+                    <a href="/about" title="Get to know Mike">
+                        <span class="navLabel">About </span>
+                        <span class="navNumber">03</span>
+                    </a>
+                    <a href="/contact" title="Contact Mike">
+                        <span class="navLabel">Contact </span>
+                        <span class="navNumber">04</span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Nav Button-->
+                <div class="navBtnContainer">
+                    <p class="navBtnLabel"><span>Menu</span></p>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- Mobile Nav -->
+        <div class="mobileNav gridContainer">
+
+            <nav class="grid">
+                <a href="/projects" title="View Mike's design">
+                    <span class="navLabel">Projects </span>
+                    <span class="navNumber">01</span>
+                </a>
+                <a href="/blog" title="Read Mike's blog">
+                    <span class="navLabel">Content </span>
+                    <span class="navNumber">02</span>
+                </a>
+                <a href="/about" title="Get to know Mike">
+                    <span class="navLabel">About </span>
+                    <span class="navNumber">03</span>
+                </a>
+                <a href="/contact" title="Contact Mike">
+                    <span class="navLabel">Contact </span>
+                    <span class="navNumber">04</span>
+                </a>
+            </nav>
+
+            <div class="mobileNavLower">
+                <div class="divider"></div>
+                <p class="socialLinks">
+                    To chat with Mike, send him a message on <a href="https://www.linkedin.com/in/mikestilling/" title="Mike's LinkedIn">LinkedIn</a> or slide into his DM's on <a href="https://www.instagram.com/mikestilling/" title="Mike's Instagram">Instagram</a> or be traditional and <a href="https://www.instagram.com/mikestilling/" title="Mike's Instagram">send Mike an email.</a></p>
+            </div>
+
+        </div>
+
+
+
+        <!-- Page Content -->
+        <main data-barba-namespace="{{ barba }}">
+            {{ content | safe }}
+        </main>
+
+
+        
+        <!-- Footer -->
+        <footer>
+            <a href="/">Footer Logo</a>
+            <nav>
+                <ul>
+                    <li><a href="/projects">Projects</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+            </nav>
+        </footer>
+
+
+
+    </div>
+    <script src="{{ '/assets/js/main.js' | url }}"></script>
+</body>
+
+
+</html>

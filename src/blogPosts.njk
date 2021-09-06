@@ -1,0 +1,35 @@
+---
+pagination:
+  data: blogPosts
+  size: 1
+  alias: page
+  addAllPagesToCollections: true
+permalink: "blog/{{ page.slug | slug }}/"
+tags: "page"
+layout: base.njk
+
+eleventyComputed:
+  title: "{{- page.postTitle -}}"
+  url: "/blog/{{- page.slug | slug -}}/"
+  description: "{{- page.metaDescription -}}"
+  image: "{{- page.heroImage.url -}}"
+  barba: "{{- page.postTitle | slug -}}"
+---
+
+<img src="{{ page.metaImage }}" alt=""/>
+
+<h1>
+    {{ page.postTitle }}
+</h1>
+<br>
+
+<img src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
+
+<section class="blogContent">
+    {{- page.postContent | safe -}}
+</section>
+
+<ol>
+    <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
+    <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
+</ol>

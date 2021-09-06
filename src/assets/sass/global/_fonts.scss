@@ -1,0 +1,75 @@
+// Neue Montreal
+@font-face {
+    font-family: 'Neue Montreal';
+    src: url('../fonts/NeueMontreal-Bold.woff2') format("woff2");
+         font-weight: 700;
+         font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Montreal';
+    src: url('../fonts/NeueMontreal-BoldItalic.woff2') format("woff2");
+         font-weight: 700;
+         font-style: italic;
+}
+
+@font-face {
+    font-family: 'Neue Montreal';
+    src: url('../fonts/NeueMontreal-Regular.woff2') format("woff2");
+         font-weight: 400;
+         font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Montreal';
+    src: url('../fonts/NeueMontreal-Italic.woff2') format("woff2");
+         font-weight: 400;
+         font-style: italic;
+}
+
+// Editorial New
+@font-face {
+    font-family: 'Editorial New';
+    src: url('../fonts/PPEditorialNew-Bold.woff2') format("woff2");
+         font-weight: 700;
+         font-style: normal;
+}
+
+@font-face {
+    font-family: 'Editorial New';
+    src: url('../fonts/PPEditorialNew-BoldItalic.woff2') format("woff2");
+         font-weight: 700;
+         font-style: italic;
+}
+
+@font-face {
+    font-family: 'Editorial New';
+    src: url('../fonts/PPEditorialNew-Regular.woff2') format("woff2");
+         font-weight: 400;
+         font-style: normal;
+}
+
+@font-face {
+    font-family: 'Editorial New';
+    src: url('../fonts/PPEditorialNew-Italic.woff2') format("woff2");
+         font-weight: 400;
+         font-style: italic;
+}
+
+// Space Mono
+@font-face {
+    font-family: 'Space Mono';
+    src: url('../fonts/spacemono-regular.woff2') format("woff2");
+         font-weight: 400;
+         font-style: normal;
+}
+
+
+//Variables
+$sans: 'Neue Montreal';
+$serif: 'Editorial New';
+$mono: 'Space Mono';
+
+.serif { font-family: $serif; font-style: italic; }
+.mono  { font-family: $mono; }
+.allCaps { text-transform: uppercase; }

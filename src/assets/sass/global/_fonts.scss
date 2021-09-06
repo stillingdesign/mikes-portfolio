@@ -2,29 +2,33 @@
 @font-face {
     font-family: 'Neue Montreal';
     src: url('../fonts/NeueMontreal-Bold.woff2') format("woff2");
-         font-weight: 700;
-         font-style: normal;
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Neue Montreal';
     src: url('../fonts/NeueMontreal-BoldItalic.woff2') format("woff2");
-         font-weight: 700;
-         font-style: italic;
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Neue Montreal';
     src: url('../fonts/NeueMontreal-Regular.woff2') format("woff2");
-         font-weight: 400;
-         font-style: normal;
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Neue Montreal';
     src: url('../fonts/NeueMontreal-Italic.woff2') format("woff2");
-         font-weight: 400;
-         font-style: italic;
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
 }
 
 // Editorial New
@@ -38,30 +42,34 @@
 @font-face {
     font-family: 'Editorial New';
     src: url('../fonts/PPEditorialNew-BoldItalic.woff2') format("woff2");
-         font-weight: 700;
-         font-style: italic;
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Editorial New';
     src: url('../fonts/PPEditorialNew-Regular.woff2') format("woff2");
-         font-weight: 400;
-         font-style: normal;
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Editorial New';
     src: url('../fonts/PPEditorialNew-Italic.woff2') format("woff2");
-         font-weight: 400;
-         font-style: italic;
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
 }
 
 // Space Mono
 @font-face {
     font-family: 'Space Mono';
     src: url('../fonts/spacemono-regular.woff2') format("woff2");
-         font-weight: 400;
-         font-style: normal;
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 

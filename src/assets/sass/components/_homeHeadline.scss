@@ -21,7 +21,7 @@
     //960 Breakpoint
     @media screen and (max-width: 960px) {
         padding-top: 3rem;
-        padding-bottom: 8rem;
+        padding-bottom: 6rem;
         .grid { h1 { font-size: 9.5vw; } }
     }
 
@@ -85,6 +85,29 @@
         .grid {
             .imgOuter {
                 grid-column: 3 / span 11;
+            }
+        }
+    }
+
+
+
+    //960 Breakpoint
+    @media screen and (max-width: 960px) {
+        .grid {
+            .imgOuter {
+                width: 100%;
+                .imgLabel { display: none; }
+            }
+        }
+    }
+
+    //640 Breakpoint
+    @media screen and (max-width: 960px) {
+        .grid {
+            .imgOuter {
+                width: 100%;
+                padding-top: 100%;
+                .imgLabel { display: none; }
             }
         }
     }

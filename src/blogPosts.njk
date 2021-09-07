@@ -12,21 +12,43 @@ eleventyComputed:
   title: "{{- page.postTitle -}}"
   url: "/blog/{{- page.slug | slug -}}/"
   description: "{{- page.metaDescription -}}"
-  image: "{{- page.heroImage.url -}}"
+  image: "{{- page.metaImage -}}"
   barba: "{{- page.postTitle | slug -}}"
 ---
 
-<img src="{{ page.metaImage }}" alt=""/>
+<!-- Headline -->
+<section class="gridContainer">
+  <div class="grid">
 
-<h1>
-    {{ page.postTitle }}
-</h1>
-<br>
+    <h1>
+      {{ page.postTitle }}
+    </h1>
+    
+  </div>
+</section>
 
-<img src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
+<!-- Featured Image -->
+<section class="gridContainer">
+  <div class="grid">
 
-<section class="blogContent">
-    {{- page.postContent | safe -}}
+    <div class="imgOuter">
+      <div class="imgInner">
+        <img src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Blog Content-->
+<section class="gridContainer blogContent">
+    <div class="grid">
+
+      <div class="blogContentContainer">
+        {{- page.postContent | safe -}}
+      </div>
+
+    </div>
 </section>
 
 <ol>

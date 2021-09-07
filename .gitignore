@@ -2,3 +2,4 @@ node_modules
 dist
 Icon\r
 .DS_Store
+.env

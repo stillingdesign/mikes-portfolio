@@ -1,0 +1,143 @@
+.blogPostHeadline {
+    padding-top: 5rem;
+    padding-bottom: 9rem;
+
+    .grid {
+
+        h1 {
+            grid-column: 2 / span 12;
+            font-size: 7.8vw;
+            line-height: 110%;
+        }
+    }
+}
+
+
+.blogPostHeroImg {
+    background: linear-gradient(180deg, $gray10 50%, $gray95 50%);
+
+    .grid {
+
+        .imgOuter {
+            grid-column: 2 / span 12;
+            overflow: hidden;
+            height: 0;
+            padding-top: 56.25%;
+            
+            .imgInner {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+
+                img { max-width: 100%; }
+            }
+        }
+    }
+}
+
+
+
+// Content Formatting
+.blogContentContainer {
+    padding: 4rem 0;
+    color: $gray30;
+    background-color: $gray95;
+
+    .grid {
+        .blogContent {
+            $blockSpacing: 3rem;
+            $titleSpacing: 1.5rem;
+            grid-column: 5 / span 6;
+            
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                line-height: 110%;
+                margin-top: $blockSpacing;
+                margin-bottom: $titleSpacing;
+                color: $gray10;
+            }
+
+            h1 { font-size: 4rem;   }
+            h2 { font-size: 3.5rem; }
+            h3 { font-size: 3rem;   }
+            h4 { font-size: 2.5rem; }
+            h5 { font-size: 2rem;   }
+            h6 { font-size: 1.5rem; }
+
+            p {
+                font-size: 1.125rem;
+                line-height: 140%;
+                margin-bottom: 1rem;
+            }
+
+            b {
+                font-weight: 700;
+                color: $gray10;
+            }
+
+            i { font-style: italic; }
+
+            hr {
+                margin-top: 3.25rem;
+                width: 100%;
+                height: 2px;
+                background-color: $gray80;
+                border: none;
+            }
+
+            img {
+                max-width: 100%;
+                margin-top: $titleSpacing;
+                margin-bottom: $titleSpacing;
+            }
+
+            ol { list-style-type: decimal; }
+            ul { list-style-type: disc; }
+
+            ol, ul {
+                margin-top: 2rem;
+                ::marker { font-weight: bold; }
+
+                li {
+                    p {
+                        margin-left: 1rem;
+                        line-height: 110%;
+                    }
+                }
+            }
+
+            code {
+                margin-top: 2rem;
+                display: block;
+                padding: 1rem;
+                font-family: $mono, monospace;
+                font-size: 1rem;
+                line-height: 140%;
+                color: $gray100;
+                background-color: $gray10;
+            }
+
+            blockquote {
+                margin: 2rem 0;
+                padding: 0 2rem;
+                border-left: 2px solid $gray50;
+
+                p {
+                    font-family: $serif;
+                    font-size: 1.5rem;
+                    font-style: italic;
+                    line-height: 180%;
+                    color: $gray10;
+                }
+            }
+        }
+    }
+}

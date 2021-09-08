@@ -17,7 +17,7 @@ eleventyComputed:
 ---
 
 <!-- Headline -->
-<section class="gridContainer">
+<section class="gridContainer blogPostHeadline">
   <div class="grid">
 
     <h1>
@@ -28,7 +28,7 @@ eleventyComputed:
 </section>
 
 <!-- Featured Image -->
-<section class="gridContainer">
+<section class="gridContainer blogPostHeroImg">
   <div class="grid">
 
     <div class="imgOuter">
@@ -41,10 +41,10 @@ eleventyComputed:
 </section>
 
 <!-- Blog Content-->
-<section class="gridContainer blogContent">
+<section class="gridContainer blogContentContainer">
     <div class="grid">
 
-      <div class="blogContentContainer">
+      <div class="blogContent">
         {{- page.postContent | safe -}}
       </div>
 
@@ -55,5 +55,3 @@ eleventyComputed:
     <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
     <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
 </ol>
-
-<section class="filler"></section>

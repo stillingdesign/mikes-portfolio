@@ -1,0 +1,172 @@
+footer {
+    margin-top: 12rem;
+    background-color: $gray0;
+    overflow: hidden;
+
+    .grid {
+
+        // Column 1
+        .col1 {
+            grid-column: 2 / span 4;
+            padding-top: 4rem;
+            padding-bottom: 6.375rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            .logo {
+                font-size: 1.75rem;
+                line-height: 110%;
+                color: $gray100
+            }
+
+            .note {
+
+                p {
+                    font-size: 0.625rem;
+                    color: $gray40;
+                }
+
+                a {
+                    display: block;
+                    padding-top: 0.5rem;
+                    color: $gray100;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        // Column 2
+        .col2 {
+            grid-column: 6 / span 4;
+            padding-top: 4.25rem;
+            padding-bottom: 6.375rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1.125rem;
+
+            .navCol1,
+            .navCol2 {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+
+                h6 {
+                    font-size: 1.5rem;
+                    line-height: 110%;
+                    margin-bottom: 0.625rem;
+                }
+
+                a {
+                    color: $gray50;
+                    line-height: 110%;
+                    padding: 0.375rem 0;
+                }
+            }
+        }
+
+        // Column 3
+        .col3 {
+            background-color: $gray100;
+            grid-column: 10 / span 5;
+            z-index: 2;
+        }
+
+        .footerMarquee {
+            z-index: 1;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70vw;
+            height: 2.25rem;
+            background: $gradient;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+
+            p {
+                font-size: 0.875rem;
+                margin-top: 0.2rem;
+                text-transform: uppercase;
+                flex-shrink: 0;
+
+                span {
+                    display: inline-block;
+                    padding-right: 1rem;
+                }
+            }
+        }
+    }
+
+
+
+    //960 Breakpoint
+    @media screen and (max-width: 960px) {
+        margin-top: 8rem;
+
+        .grid {
+            width: 100%;
+            grid-gap: 0;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: stretch;
+
+            .col1,
+            .col2 {
+                width: 50%;
+            }
+
+            .footerMarquee {
+                width: 100vw;
+                left: -3rem;
+            }
+        }
+    }
+
+
+
+    //640 Breakpoint
+    @media screen and (max-width: 640px) {
+        margin-top: 4rem;
+
+        .grid {
+            width: 100%;
+            grid-gap: 0;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+
+            .col1,
+            .col2 {
+                width: 100%;
+                padding: 0;
+            }
+
+            .col1 {
+                padding-top: 4rem;
+                padding-bottom: 2rem;
+                .logo { margin-bottom: 1.5rem;}
+
+                .note {
+                    width: 100%;
+                    padding: 1rem 0;
+                    border-top: 2px solid $gray30;
+                    border-bottom: 2px solid $gray30;
+                }
+            }
+
+            .col2 { padding-bottom: 6rem; }
+
+            .footerMarquee {
+                width: 100vw;
+                left: -1.25rem;
+            }
+        }
+    }
+}

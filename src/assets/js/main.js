@@ -7,12 +7,17 @@ import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(ScrollToPlugin, InertiaPlugin, SplitText);
 
-
 // Init Locomotive
 const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true
 });
+
+scroll.destroy()
+
+setTimeout(function(){
+    scroll.init()
+}, 100);
 
 // Menu Open
 const menuIcon = document.querySelector('.navBtnContainer');

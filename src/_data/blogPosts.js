@@ -43,7 +43,7 @@ module.exports = function() {
             // Render Nested Assets
             const renderOptions = {
                 renderNode: {
-                    [BLOCKS.EMBEDDED_ASSET]: (node) => `<img src=https:${node.data.target.fields.file.url}>`,
+                    [BLOCKS.EMBEDDED_ASSET]: (node) => `<img src="https:${node.data.target.fields.file.url}" alt="${node.data.target.fields.description}"/>`,
                     [BLOCKS.PARAGRAPH]: (node, next) => `<p>${next(node.content).replace(/\n/g, '<br/>')}</p>`
                 }
             }

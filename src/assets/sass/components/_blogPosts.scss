@@ -13,6 +13,7 @@
 }
 
 
+
 .blogPostHeroImg {
     background: linear-gradient(180deg, $gray10 50%, $gray95 50%);
 
@@ -21,6 +22,7 @@
         .imgOuter {
             grid-column: 2 / span 12;
             overflow: hidden;
+            width: 100%;
             height: 0;
             padding-top: 56.25%;
             
@@ -43,27 +45,28 @@
 
 // Content Formatting
 .blogContentContainer {
-    padding: 4rem 0;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     color: $gray30;
     background-color: $gray95;
 
     .grid {
+
         .blogContent {
+            grid-column: 5 / span 6;
+            width: 100%;
             $blockSpacing: 3rem;
             $titleSpacing: 1.5rem;
-            grid-column: 5 / span 6;
             
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
+            // Text Styling
+            h1, h2, h3, h4, h5, h6 {
                 line-height: 110%;
                 margin-top: $blockSpacing;
                 margin-bottom: $titleSpacing;
                 color: $gray10;
             }
+
+            h5, h6, p { line-height: 140%; }
 
             h1 { font-size: 4rem;   }
             h2 { font-size: 3.5rem; }
@@ -74,7 +77,6 @@
 
             p {
                 font-size: 1.125rem;
-                line-height: 140%;
                 margin-bottom: 1rem;
             }
 
@@ -85,10 +87,11 @@
 
             i { font-style: italic; }
 
+            // Element Styling
             hr {
-                margin-top: 3.25rem;
                 width: 100%;
                 height: 2px;
+                margin-top: 3.25rem;
                 background-color: $gray80;
                 border: none;
             }
@@ -123,6 +126,11 @@
                 line-height: 140%;
                 color: $gray100;
                 background-color: $gray10;
+                overflow: scroll;
+                max-height: 640px;
+                -ms-overflow-style: none;
+                scrollbar-width: none; 
+                &::-webkit-scrollbar { display: none; }
             }
 
             blockquote {
@@ -137,6 +145,17 @@
                     line-height: 180%;
                     color: $gray10;
                 }
+            }
+        }
+    }
+
+
+
+    //1440 Breakpoint
+    @media screen and (max-width: 1440px) {
+        .grid {
+            .blogContent {
+                grid-column: 4 / span 8;
             }
         }
     }

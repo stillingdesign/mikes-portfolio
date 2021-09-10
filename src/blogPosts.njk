@@ -48,16 +48,10 @@ eleventyComputed:
         {{- page.postContent | safe -}}
       </div>
 
+      <ol>
+        <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
+        <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
+      </ol>
+
     </div>
-</section>
-
-<section class="gridContainer blogPrevNext">
-  <div class="grid">
-
-    <ol>
-      <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
-      <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
-    </ol>
-
-  </div>
 </section>

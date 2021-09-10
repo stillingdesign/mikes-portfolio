@@ -51,32 +51,36 @@
     background-color: $gray95;
 
     .grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
 
         .blogContent {
-            grid-column: 5 / span 6;
             width: 100%;
-            $blockSpacing: 3rem;
-            $titleSpacing: 1.5rem;
+            max-width: 54rem;
             
             // Text Styling
             h1, h2, h3, h4, h5, h6 {
                 line-height: 110%;
-                margin-top: $blockSpacing;
-                margin-bottom: $titleSpacing;
+                margin-top: 3rem;
+                margin-bottom: 1rem;
                 color: $gray10;
+                font-weight: 700;
             }
 
-            h5, h6, p { line-height: 140%; }
+            h5, h6 { line-height: 120%; }
 
-            h1 { font-size: 4rem;   }
-            h2 { font-size: 3.5rem; }
-            h3 { font-size: 3rem;   }
-            h4 { font-size: 2.5rem; }
-            h5 { font-size: 2rem;   }
+            h1 { font-size: 3.5rem;   }
+            h2 { font-size: 3rem; }
+            h3 { font-size: 2.5rem;   }
+            h4 { font-size: 2rem; }
+            h5 { font-size: 1.75rem;   }
             h6 { font-size: 1.5rem; }
 
             p {
-                font-size: 1.125rem;
+                font-size: 1.25rem;
+                line-height: 150%;
                 margin-bottom: 1rem;
             }
 
@@ -98,14 +102,15 @@
 
             img {
                 max-width: 100%;
-                margin-top: $titleSpacing;
-                margin-bottom: $titleSpacing;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
             }
 
             ol { list-style-type: decimal; }
             ul { list-style-type: disc; }
 
             ol, ul {
+                margin-left: 1rem;
                 margin-top: 2rem;
                 ::marker { font-weight: bold; }
 
@@ -150,12 +155,48 @@
     }
 
 
+    // 960 Breakpoint
+    @media screen and (max-width: 960px) {
 
-    //1440 Breakpoint
-    @media screen and (max-width: 1440px) {
         .grid {
             .blogContent {
-                grid-column: 4 / span 8;
+
+                h1, h2, h3, h4, h5, h6 {
+                    line-height: 110%;
+                    margin-top: 3rem;
+                    margin-bottom: 1rem;
+                    color: $gray10;
+                    font-weight: 700;
+                }
+
+                h5, h6 { line-height: 120%; }
+
+                h1 { font-size: 2.5rem; }
+                h2 { font-size: 2.25rem; }
+                h3 { font-size: 2rem; }
+                h4 { font-size: 1.75rem; }
+                h5 { font-size: 1.5rem; }
+                h6 { font-size: 1.25rem; }
+
+                p {
+                    font-size: 1.25rem;
+                    line-height: 150%;
+                    margin-bottom: 1rem;
+                }
+
+                blockquote {
+                    margin: 2rem 0;
+                    padding: 0 1rem;
+                    border-left: 2px solid $gray50;
+    
+                    p {
+                        font-family: $serif;
+                        font-size: 1.25rem;
+                        font-style: italic;
+                        line-height: 180%;
+                        color: $gray10;
+                    }
+                }
             }
         }
     }

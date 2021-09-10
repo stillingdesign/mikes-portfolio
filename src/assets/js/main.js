@@ -4,7 +4,6 @@ import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { InertiaPlugin } from "gsap/InertiaPlugin";
 import { SplitText } from "gsap/SplitText";
-import locomotiveScroll from 'locomotive-scroll';
 
 gsap.registerPlugin(ScrollToPlugin, InertiaPlugin, SplitText);
 

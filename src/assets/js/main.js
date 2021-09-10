@@ -4,9 +4,11 @@ import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { InertiaPlugin } from "gsap/InertiaPlugin";
 import { SplitText } from "gsap/SplitText";
+import locomotiveScroll from 'locomotive-scroll';
 
 gsap.registerPlugin(ScrollToPlugin, InertiaPlugin, SplitText);
 
+const scrollContainer = document.querySelector('.locomotive');
 const menuIcon = document.querySelector('.navBtnContainer');
 const mobileNav = document.querySelector('.mobileNav');
 
@@ -15,16 +17,16 @@ let scroll = new LocomotiveScroll({
     smooth: true
 });
 
-barba.hooks.leave(() => {
-});
-
 barba.hooks.beforeLeave(() => {
     menuIcon.classList.remove(`active`);
     mobileNav.classList.remove(`active`);
 });
 
+barba.hooks.beforeEnter(() => {
+    scroll.scrollTo(0, 0);
+});
+
 barba.hooks.enter(() => {
-    window.scrollTo(0, 0);
     globalScripts();
 });
 
@@ -44,7 +46,6 @@ barba.init({
 
     }]
 });
-
 
 
 // Global Scripts

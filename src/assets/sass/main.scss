@@ -4,7 +4,6 @@
 @import 'global/fonts';
 @import 'global/base';
 @import 'global/easings';
-@import 'global/locomotive';
 
 // Components
 @import 'components/header';
@@ -13,6 +12,9 @@
 @import 'components/homeHeadline';
 @import 'components/homeHeroImg';
 @import 'components/blogPosts';
+
+// Locomotive
+@import 'global/locomotive';
 
 .filler {
     width: 100%;

@@ -13,6 +13,10 @@ html {
 
 body {
     background-color: $gray10;
+    @media screen and (min-width: 1024px) {
+        max-height: 100vh;
+        overflow: hidden;
+    }
 }
 
 main {

@@ -33,6 +33,30 @@ footer {
                     padding-top: 0.5rem;
                     color: $gray100;
                     font-weight: 400;
+                    overflow: hidden;
+                    padding-top: 0.3rem;
+                    padding-bottom: 0.3rem;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 100%;
+                        width: 0;
+                        height: 2px;
+                        background: $gradient;
+                        transition: width 0ms linear 400ms, left 400ms $inOutQuint 0ms;
+                    } 
+
+                    @media (hover: hover) {
+                        &:hover {
+                            &:before {
+                                left: 0;
+                                width: 100%;
+                                transition: left 0ms linear 0ms, width 500ms $inOutQuint 0ms;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -63,6 +87,13 @@ footer {
                     color: $gray50;
                     line-height: 110%;
                     padding: 0.375rem 0;
+                    transition: color 200ms linear 0ms;
+
+                    @media (hover: hover) {
+                        &:hover {
+                            color: $gray100;
+                        }
+                    }
                 }
             }
         }
@@ -158,6 +189,10 @@ footer {
                     padding: 1rem 0;
                     border-top: 2px solid $gray30;
                     border-bottom: 2px solid $gray30;
+
+                    a {
+                        padding-bottom: 0;
+                    }
                 }
             }
 

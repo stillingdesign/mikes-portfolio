@@ -15,13 +15,16 @@ gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, InertiaPlugin, SplitText);
 // Global Variables
 const menuIcon = document.querySelector('.navBtnContainer');
 const mobileNav = document.querySelector('.mobileNav');
-
-
+const body = document.querySelector('body');
+const scrollContainer = document.querySelector('.locomotive');
 
 // Locomotive Scroll
 const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
-    smooth: true
+    smooth: true,
+    tablet: {
+        breakpoint: 961
+    }
 });
 
 
@@ -62,11 +65,11 @@ imagesLoaded( 'body', function() {
 });
 
 
+
 /* BARBA JS START */
 barba.hooks.after(() => {
     scroll.update();
 });
-
 
 
 barba.init({
@@ -86,7 +89,6 @@ barba.init({
 
                 const timeline = gsap.timeline({
                     onComplete() {
-                        //current.container.remove();
                         resolve();
                     }
                 });
@@ -94,6 +96,7 @@ barba.init({
                 timeline
                     .to(current.container, {duration: 0.5, y: 100, opacity: 0}, 0)
                     .to(current.container, {display: 'none'})
+                    scroll.scrollTo(0, 0);
 
             });
 

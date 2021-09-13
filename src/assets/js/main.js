@@ -57,7 +57,6 @@ const footerMarqueeAnimate = function footerMarqueeAnimate() {
 
 // Update after Images Load
 imagesLoaded( 'body', function() {
-    console.log('images have loaded');
     scroll.update();
     footerMarqueeAnimate();
 });
@@ -75,16 +74,56 @@ barba.init({
     transitions: [{
         name: 'default',
 
+
+
         once() {},
 
-        leave({ current, next, trigger }) {},
+
+
+        leave({ current, next, trigger }) {
+
+            return new Promise(resolve => {
+
+                const timeline = gsap.timeline({
+                    onComplete() {
+                        //current.container.remove();
+                        resolve();
+                    }
+                });
+
+                timeline
+                    .to(current.container, {duration: 0.5, y: 100, opacity: 0}, 0)
+                    .to(current.container, {display: 'none'})
+
+            });
+
+        },
+
+
 
         enter({ current, next, trigger }) {
+
             imagesLoaded( 'body', function() {
-                console.log('images have loaded');
                 scroll.update();
             });
+
+            return new Promise(resolve => {
+                
+                const timeline = gsap.timeline({
+                    onComplete() {
+                        resolve();
+                    }
+                });
+
+                timeline
+                    .set(next.container, {opacity: 0})
+                    .from(next.container, {duration: 0.5, opacity: 0, y: 100}, 0)
+
+            });
+
         },
+
+
 
     }],
 

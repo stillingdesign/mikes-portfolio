@@ -1,5 +1,4 @@
 footer {
-    margin-top: 12rem;
     background-color: $gray0;
     overflow: hidden;
 
@@ -138,7 +137,6 @@ footer {
 
     //960 Breakpoint
     @media screen and (max-width: 960px) {
-        margin-top: 8rem;
 
         .grid {
             width: 100%;
@@ -163,7 +161,6 @@ footer {
 
     //640 Breakpoint
     @media screen and (max-width: 640px) {
-        margin-top: 4rem;
 
         .grid {
             width: 100%;

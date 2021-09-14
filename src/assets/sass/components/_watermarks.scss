@@ -1,0 +1,21 @@
+.homeCaseStudiesTitle {
+    .grid {
+        color: $gray0;
+
+        .lineOne {
+            //border: 1px solid red;
+            grid-column: 2 / span 12;
+            font-size: 16.5vw;
+            line-height: 90%;
+        }
+
+        .lineTwo {
+            //border: 1px solid red;
+            grid-column: 2 / span 12;
+            text-align: right;
+            font-size: 15vw;
+            line-height: 100%;
+            //margin-top: -2vw;
+        }
+    }
+}

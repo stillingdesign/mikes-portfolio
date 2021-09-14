@@ -135,6 +135,21 @@ footer {
 
 
 
+    //1920 Max Breakpoint
+    @media screen and (min-width: 1921px) {
+        background: linear-gradient(90deg, $gray0 75%, $gray100 75%);
+
+        .grid {
+            .footerMarquee {
+                left: auto;
+                right: 2px;
+                width: 100vw;
+            }
+        }
+    }
+
+
+
     //960 Breakpoint
     @media screen and (max-width: 960px) {
 

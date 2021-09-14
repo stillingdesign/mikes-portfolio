@@ -13,7 +13,8 @@ html {
 
 body {
     background-color: $gray10;
-    @media screen and (min-width: 1024px) {
+
+    @media screen and (min-width: 961px) {
         max-height: 100vh;
         overflow: hidden;
     }
@@ -61,12 +62,14 @@ a {
     display: grid;
     grid-template-columns: repeat(14, 1fr);
     grid-gap: 1.125rem;
+    row-gap: 0;
 
     @media screen and (max-width: 960px) {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+        grid-gap: 0;
     }
 }
 

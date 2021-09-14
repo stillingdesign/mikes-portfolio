@@ -15,10 +15,14 @@
 
         p {
             //border: 1px solid red;
+            margin-top: 2rem;
             grid-column: 10 / span 4;
             font-size: 1.25vw;
             line-height: 140%;
-            padding-bottom: 0.5vw;
+        }
+
+        .gridFill {
+            grid-column: 10 / span 4;
         }
     }
 
@@ -30,11 +34,7 @@
         .grid {
 
             h2 { font-size: 76px; }
-
-            p {
-                font-size: 24px;
-                padding-bottom: 0.65rem;
-            }
+            p { font-size: 24px; }
         }
     }
 
@@ -46,13 +46,17 @@
         .grid {
 
             h2 {
-                grid-column: 2 / span 7;
+                grid-column: 2 / span 9;
                 font-size: 6vw;
             }
 
             p {
+                grid-column: 8 / span 6;
                 font-size: 1.8vw;
-                padding-bottom: 0.65rem;
+            }
+
+            .gridFill {
+                display: none;
             }
         }
     }
@@ -65,34 +69,24 @@
             padding-top: 6rem;
             padding-bottom: 6rem;
 
-            h2 {
-                font-size: 8vw;
-                margin-bottom: 2rem;
-            }
-
-            p {
-                font-size: 24px;
-                padding-bottom: 0;
-            }
+            h2 { font-size: 8vw; }
+            p { font-size: 24px; }
         }
     }
 
 
 
-    //960 Breakpoint
+    //640 Breakpoint
     @media screen and (max-width: 640px) {
         .grid {
             padding-top: 4rem;
             padding-bottom: 4rem;
 
-            h2 {
-                font-size: 10.5vw;
-                margin-bottom: 1rem;
-            }
+            h2 { font-size: 10.5vw; }
 
             p {
                 font-size: 1.25rem;
-                padding-bottom: 0;
+                margin-top: 1rem;
             }
         }
     }

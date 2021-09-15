@@ -7,6 +7,7 @@
             grid-column: 2 / span 12;
             font-size: 16.5vw;
             line-height: 90%;
+            width: 100%;
         }
 
         .lineTwo {
@@ -15,7 +16,44 @@
             text-align: right;
             font-size: 15vw;
             line-height: 100%;
-            //margin-top: -2vw;
+            width: 100%;
+        }
+    }
+
+
+
+    // 1440 Breakpoint
+    @media screen and (max-width: 1440px) {
+        .grid {
+            .lineOne {
+                grid-column: 1 / span 14;
+                font-size: 20vw;
+                margin-left: -1vw;
+            }
+    
+            .lineTwo {
+                grid-column: 1 / span 14;
+                font-size: 18vw;
+            }
+        }
+    }
+
+
+
+    // 640 Breakpoint
+    @media screen and (max-width: 640px) {
+        .grid {
+            .lineOne {
+                font-size: 25vw;
+                text-align: center;
+                margin-left: 0;
+            }
+    
+            .lineTwo {
+                font-size: 22.5vw;
+                text-align: center;
+                margin-left: -2vw;
+            }
         }
     }
 }

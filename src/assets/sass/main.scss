@@ -9,11 +9,14 @@
 @import 'components/header';
 @import 'components/footer';
 @import 'components/mobileNav';
+@import 'components/blogPosts';
+@import 'components/watermarks';
+
+// Home Page
 @import 'components/homeHeadline';
 @import 'components/homeHeroImg';
 @import 'components/homeIntro';
-@import 'components/blogPosts';
-@import 'components/watermarks';
+@import 'components/homeCaseStudies';
 
 // Locomotive
 @import 'global/locomotive';

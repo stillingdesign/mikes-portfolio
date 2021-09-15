@@ -46,7 +46,9 @@ eleventyComputed:
 <section class="gridContainer homeIntro">
   <div class="grid">
 
-    <h2>He turns strategy into reality with design, code, and <span class="serif italic">collaboration</span>.</h2>
+    <h2>
+      He turns strategy into reality with design, code, and <span class="serif italic">collaboration</span>.
+    </h2>
 
     <div class="gridFill"></div>
     
@@ -63,6 +65,28 @@ eleventyComputed:
 
     <p class="allCaps lineOne">Case</p>
     <p class="allCaps serif lineTwo">Studies</p>
+
+  </div>
+</section>
+
+<!-- Case Studies -->
+<section class="gridContainer homeCaseStudies">
+  <div class="grid">
+
+    {% for page in projectPages.slice(0, 3) %}
+    <a href="/projects/{{ page.slug | url }}">
+      <div class="imgOuter">
+        <div class="imgInner">
+          <img src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
+        </div>
+      </div>
+      <div class="labelOuter">
+        <div class="labelInner">
+          <h3>{{page.postTitle}}</h3>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
 
   </div>
 </section>

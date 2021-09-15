@@ -70,22 +70,27 @@ eleventyComputed:
 </section>
 
 <!-- Case Studies -->
-<section class="gridContainer homeCaseStudies">
-  <div class="grid">
+<section class="gridContainer homeCaseStudies" id="homeCaseStudies">
+  <div class="grid homeCaseStudiesContainer" id="homeCaseStudiesContainer">
 
     {% for page in projectPages.slice(0, 3) %}
-    <a href="/projects/{{ page.slug | url }}">
-      <div class="imgOuter">
-        <div class="imgInner">
-          <img src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
+    <div class="homeCaseStudy">
+      <a href="/projects/{{ page.slug | url }}">
+
+        <div class="imgOuter">
+          <div class="imgInner">
+            <img src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
+          </div>
         </div>
-      </div>
-      <div class="labelOuter">
-        <div class="labelInner">
-          <h3>{{page.postTitle}}</h3>
+
+        <div class="labelOuter">
+          <div class="labelInner">
+            <h3>{{page.postTitle}}</h3>
+          </div>
         </div>
-      </div>
-    </a>
+
+      </a>
+    </div>
     {% endfor %}
 
   </div>

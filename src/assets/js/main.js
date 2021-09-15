@@ -3,12 +3,13 @@ var imagesLoaded = require('imagesloaded');
 import barba from '@barba/core';
 import LocomotiveScroll from 'locomotive-scroll';
 import { gsap } from "gsap";
+import { Draggable } from "gsap/Draggable";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { InertiaPlugin } from "gsap/InertiaPlugin";
 import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, InertiaPlugin, SplitText);
+gsap.registerPlugin(Draggable, ScrollToPlugin, ScrollTrigger, InertiaPlugin, SplitText);
 
 
 
@@ -54,6 +55,16 @@ const footerMarqueeAnimate = function footerMarqueeAnimate() {
     console.log(marqueeItemWidth);
     const marqueeTL = gsap.timeline({repeat:-1, defaults:{ease:"none"}});
     marqueeTL.to(footerMarqueeTrack,{x:-marqueeItemWidth, duration:20});
+
+    const dragRegion = document.querySelector('.homeCaseStudiesContainer');
+    const dragWidth = dragRegion.offsetWidth;
+    console.log(dragWidth);
+    Draggable.create(".homeCaseStudiesContainer", {
+        type:"x",
+        inertia: true,
+        bounds: {right: dragWidth, maxX: 0},
+        edgeResistance:0.65
+    });    
 }
 
 

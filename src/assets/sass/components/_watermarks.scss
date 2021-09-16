@@ -21,6 +21,17 @@
     }
 
 
+    //1920 Max Breakpoint
+    @media screen and (min-width: 1920px) {
+        .grid {
+            color: $gray0;
+    
+            .lineOne { font-size: 20rem; }
+            .lineTwo { font-size: 18rem; }
+        }
+    }
+
+
 
     // 1440 Breakpoint
     @media screen and (max-width: 1440px) {

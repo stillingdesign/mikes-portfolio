@@ -54,17 +54,7 @@ const footerMarqueeAnimate = function footerMarqueeAnimate() {
     const marqueeItemWidth = footerMarquee.offsetWidth;
     console.log(marqueeItemWidth);
     const marqueeTL = gsap.timeline({repeat:-1, defaults:{ease:"none"}});
-    marqueeTL.to(footerMarqueeTrack,{x:-marqueeItemWidth, duration:20});
-
-    const dragRegion = document.querySelector('.homeCaseStudiesContainer');
-    const dragWidth = dragRegion.offsetWidth;
-    console.log(dragWidth);
-    Draggable.create(".homeCaseStudiesContainer", {
-        type:"x",
-        inertia: true,
-        bounds: {right: dragWidth, maxX: 0},
-        edgeResistance:0.65
-    });    
+    marqueeTL.to(footerMarqueeTrack,{x:-marqueeItemWidth, duration:20});  
 }
 
 

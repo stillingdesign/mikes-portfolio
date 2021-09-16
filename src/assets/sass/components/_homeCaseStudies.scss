@@ -10,18 +10,18 @@
 
             a {
                 display: flex;
+                flex-direction: column;
                 align-items: flex-start;
                 justify-content: flex-start;
                 width: 84%;
-                height: 0;
-                padding-top: 128%;
     
                 .imgOuter {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: flex-start;
                     width: 100%;
-                    height: 100%;
+                    height: 0;
+                    padding-top: 128%;
                     overflow: hidden;
     
                     .imgInner {
@@ -38,6 +38,21 @@
                         img {
                             height: 100%;
                             width: auto;
+                        }
+                    }
+                }
+
+                .labelOuter {
+                    width: 100%;
+
+                    .labelInner {
+                        width: 100%;
+                        padding: 1rem 0 0 0;
+
+                        h3 {
+                            margin-left: -0.25vw;
+                            font-size: 3vw;
+                            color: $gray100;
                         }
                     }
                 }
@@ -63,22 +78,42 @@
     }
 
 
+    //1920 Max Breakpoint
+    @media screen and (min-width: 1920px) {
+        .grid {
+            .homeCaseStudy {
+                a {
+                    .labelOuter {
+                        .labelInner {
+    
+                            h3 {
+                                margin-left: -0.25rem;
+                                font-size: 3.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
 
     //960 Breakpoint
     @media screen and (max-width: 960px) {
-        margin-top: -8vw;
+        margin-top: 0;
 
         .grid {
             flex-direction: row;
             align-items: flex-start;
-            justify-content: flex-start;
-            flex-wrap: nowrap;
+            justify-content: space-between;
+            flex-wrap: wrap;
             padding-bottom: 6rem;
 
             .homeCaseStudy {
-                width: 50%;
-                min-width: 50%;
-                margin-right: 3rem;
+                width: calc(50% - 1.5rem);
+                min-width: calc(50% - 1.5rem);
+                margin-right: 0;
 
                 a { width: 100%; }
     
@@ -93,13 +128,9 @@
                 }
     
                 &:nth-child(3) {
-                    margin-top: 0;
-                    a { left: 0; }
+                    display: none;
                 }
-
-                &:nth-child(even)  {margin-top: 8vw; }
             }
-        
         }
     }
 
@@ -112,39 +143,29 @@
 
         .grid {
             flex-shrink: 0;
-            flex-direction: row;
+            flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
-            flex-wrap: nowrap;
             padding-top: 2rem;
             padding-bottom: 4rem;
-            width: calc(80vw * 3 + 7.5rem);
+            width: 100%;
 
             .homeCaseStudy {
-                width: 80vw;
-                min-width: 80vw;
-                margin-right: 1.125rem;
+                width: 100%;
+                min-width: 100%;
+                margin-right: 0;
 
                 a { width: 100%; }
     
-                &:nth-child(1) {
-                    margin-top: 0;
-                    a { left: 0; }
-                }
-    
-                &:nth-child(2) {
-                    margin-top: 0;
-                    a { left: 0; }
-                }
+                &:nth-child(1),
+                &:nth-child(2) { margin-bottom: 3rem; }
     
                 &:nth-child(3) {
+                    display: flex;
                     margin-top: 0;
                     a { left: 0; }
                 }
-
-                &:nth-child(even)  {margin-top: 8vw; }
             }
-        
         }
     }
 }

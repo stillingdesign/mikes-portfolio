@@ -3,11 +3,18 @@
         color: $gray0;
 
         .lineOne {
-            //border: 1px solid red;
-            grid-column: 2 / span 12;
+            grid-column: 2 / span 6;
             font-size: 16.5vw;
             line-height: 90%;
             width: 100%;
+        }
+
+        .linkBlock {
+            grid-column: 10 / span 5;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            a { margin-bottom: 1.75vw; }
         }
 
         .lineTwo {
@@ -27,6 +34,11 @@
             color: $gray0;
     
             .lineOne { font-size: 20rem; }
+
+            .linkBlock {
+                a { margin-bottom: 1.75rem; }
+            }
+
             .lineTwo { font-size: 18rem; }
         }
     }
@@ -37,14 +49,35 @@
     @media screen and (max-width: 1440px) {
         .grid {
             .lineOne {
-                grid-column: 1 / span 14;
+                grid-column: 1 / span 8;
                 font-size: 20vw;
                 margin-left: -1vw;
             }
+
+            .linkBlock { grid-column: 10 / span 5; }
     
             .lineTwo {
                 grid-column: 1 / span 14;
                 font-size: 18vw;
+            }
+        }
+    }
+
+
+
+    // 960 Breakpoint
+    @media screen and (max-width: 960px) {
+        .grid {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: stretch;
+            align-items: stretch;
+
+            .lineOne {width: auto;}
+            .linkBlock {
+                flex-grow: 1;
+                justify-content: center;
+                a { margin-bottom: 1.25rem; }
             }
         }
     }
@@ -59,11 +92,63 @@
                 text-align: center;
                 margin-left: 0;
             }
+
+            .linkBlock { display: none; }
     
             .lineTwo {
                 font-size: 22.5vw;
                 text-align: center;
                 margin-left: -2vw;
+            }
+        }
+    }
+}
+
+.linkUnderlineMedium {
+    //border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0 0.8rem 0;
+    overflow: hidden;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $gray100;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $gray100;
+        transition: width 650ms $inOutQuint 0ms;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $gradient;
+        transition: width 500ms $inOutQuint 0ms;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            color: $gray100;
+
+            &:before {
+                width: 0;
+                transition: width 500ms $inOutQuint 0ms;
+            }
+        
+            &:after {
+                width: 100%;
+                transition: width 650ms $inOutQuint 0ms;
             }
         }
     }

@@ -1,0 +1,10 @@
+a {
+    color: $secondaryM;
+    text-decoration: none;
+
+    @media (hover: hover) {
+        &:hover {
+            color: $secondaryL;
+        }
+    }
+}

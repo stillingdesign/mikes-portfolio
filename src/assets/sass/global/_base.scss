@@ -25,17 +25,6 @@ main {
     overflow: hidden;
 }
 
-a {
-    color: $secondaryM;
-    text-decoration: none;
-
-    @media (hover: hover) {
-        &:hover {
-            color: $secondaryL;
-        }
-    }
-}
-
 // The Grid Wrapper
 .gridContainer {
     width: 100%;

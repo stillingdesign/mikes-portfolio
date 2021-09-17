@@ -114,7 +114,7 @@
 
                 .desc {
                     grid-column: 1 / span 6;
-                    padding: 0 0 2vw 4vw;
+                    padding: 0 0 2rem 4vw;
                     font-size: 1.5rem;
                     line-height: 140%;
                     letter-spacing: 0;
@@ -124,6 +124,123 @@
                 &.active {
                     .iconContainer .icon{ transform: rotate(-135deg); }
                     .desc { opacity: 1; }
+                }
+            }
+        }
+    }
+
+
+
+    //1920 Max Breakpoint
+    @media screen and (min-width: 1921px) {
+
+        .grid {
+            .textBox {
+                h3 {
+                    font-size: 5.5rem;
+                }
+            }
+        }
+    }
+
+
+
+    //1280 Breakpoint
+    @media screen and (max-width: 1280px) {
+
+        .grid {
+            .textBox {
+                grid-column: 2 / span 5;
+                margin-bottom: 2rem;
+                h3 { font-size: 6vw; }
+            }
+
+            .workHistory {
+                grid-column: 8 / span 6;
+
+                li {
+                    grid-template-columns: repeat(6, 1fr);
+
+                    .col1 {
+                        grid-column: 1 / span 3;
+                        h4 {
+                            margin-left: 0.5rem;
+                            font-size: 2rem;
+                        }
+                    }
+
+                    .title {
+                        grid-column: 4 / span 2;
+                        font-size: 0.8rem;
+                    }
+
+                    .duration { display: none; }
+                    .iconContainer { grid-column: 6 / span 1; }
+
+                    .desc {
+                        grid-column: 1 / span 6;
+                        padding-left: 0; 
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    //960 Breakpoint
+    @media screen and (max-width: 960px) {
+        
+        .grid {
+            padding-top: 5rem;
+            border-top: 2px solid $gray30;
+
+            .textBox {
+                margin-bottom: 4.5rem;
+
+                h3 {
+                    max-width: 60%;
+                    font-size: 8vw;
+                }
+            }
+        }
+    }
+
+
+
+    //640 Breakpoint
+    @media screen and (max-width: 640px) {
+        .grid {
+            padding-top: 4.5rem;
+
+            .textBox {
+                margin-bottom: 4rem;
+
+                h3 {
+                    max-width: 100%;
+                    font-size: 14vw;
+                    margin-bottom: 1rem;
+                }
+
+                ul li { font-size: 1rem;}
+            }
+
+            .workHistory {
+                width: 100%;
+
+                li {
+                    padding-top: 1rem;
+                    grid-row-gap: 1rem;
+                    height: 5rem;
+
+                    .col1 { grid-column: 1 / span 5; }
+                    .title {display: none;}
+
+                    .desc {
+                        padding: 0 0 1rem 0;
+                        font-size: 1.25rem;
+                    }
                 }
             }
         }

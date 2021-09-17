@@ -1,5 +1,5 @@
+//Librarys
 var imagesLoaded = require('imagesloaded');
-
 import barba from '@barba/core';
 import LocomotiveScroll from 'locomotive-scroll';
 import { gsap } from "gsap";
@@ -13,11 +13,7 @@ gsap.registerPlugin(Draggable, ScrollToPlugin, ScrollTrigger, InertiaPlugin, Spl
 
 
 
-// Global Variables
-const menuIcon = document.querySelector('.navBtnContainer');
-const mobileNav = document.querySelector('.mobileNav');
-const body = document.querySelector('body');
-const scrollContainer = document.querySelector('.locomotive');
+
 
 
 
@@ -32,7 +28,15 @@ const scroll = new LocomotiveScroll({
 
 
 
+
+
+
+
+
 // Mobile Menu Toggle
+const menuIcon = document.querySelector('.navBtnContainer');
+const mobileNav = document.querySelector('.mobileNav');
+
 const menuToggle = function () {
     menuIcon.addEventListener(`click`, function() {
         if(this.classList.contains(`active`)) {
@@ -49,6 +53,10 @@ menuToggle();
 
 
 
+
+
+
+
 // Footer Marquee
 const footerMarqueeAnimate = function () {
     const footerMarquee = document.querySelector('.footerMarqueeItem');
@@ -58,6 +66,10 @@ const footerMarqueeAnimate = function () {
     const marqueeTL = gsap.timeline({repeat:-1, defaults:{ease:"none"}});
     marqueeTL.to(footerMarqueeTrack,{x:-marqueeItemWidth, duration:20});  
 }
+
+
+
+
 
 // Work Experience Dropdown
 const experienceToggle = function () {
@@ -82,7 +94,11 @@ experienceToggle();
 
 
 
-// Update after Images Load
+
+
+
+
+// Update scroll height after Images Load
 imagesLoaded( 'body', function() {
     scroll.update();
     footerMarqueeAnimate();
@@ -90,7 +106,11 @@ imagesLoaded( 'body', function() {
 
 
 
-/* BARBA JS START */
+
+
+
+
+/* Barba */
 barba.hooks.after(() => {
     scroll.update();
 });

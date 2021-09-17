@@ -80,6 +80,8 @@
 
     //1920 Max Breakpoint
     @media screen and (min-width: 1920px) {
+        margin-top: -16rem;
+
         .grid {
             .homeCaseStudy {
                 a {
@@ -92,6 +94,9 @@
                         }
                     }
                 }
+    
+                &:nth-child(2) { margin-top: 16rem; }
+                &:nth-child(3) { margin-top: 8rem; }
             }
         }
     }

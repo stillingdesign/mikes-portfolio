@@ -19,6 +19,8 @@ const mobileNav = document.querySelector('.mobileNav');
 const body = document.querySelector('body');
 const scrollContainer = document.querySelector('.locomotive');
 
+
+
 // Locomotive Scroll
 const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
@@ -31,7 +33,7 @@ const scroll = new LocomotiveScroll({
 
 
 // Mobile Menu Toggle
-const menuToggle = function menuToggle() {
+const menuToggle = function () {
     menuIcon.addEventListener(`click`, function() {
         if(this.classList.contains(`active`)) {
             this.classList.remove(`active`);
@@ -48,7 +50,7 @@ menuToggle();
 
 
 // Footer Marquee
-const footerMarqueeAnimate = function footerMarqueeAnimate() {
+const footerMarqueeAnimate = function () {
     const footerMarquee = document.querySelector('.footerMarqueeItem');
     const footerMarqueeTrack = document.querySelector('.footerMarqueeTrack');
     const marqueeItemWidth = footerMarquee.offsetWidth;
@@ -56,6 +58,27 @@ const footerMarqueeAnimate = function footerMarqueeAnimate() {
     const marqueeTL = gsap.timeline({repeat:-1, defaults:{ease:"none"}});
     marqueeTL.to(footerMarqueeTrack,{x:-marqueeItemWidth, duration:20});  
 }
+
+// Work Experience Dropdown
+const experienceToggle = function () {
+    const resumeItems = document.querySelectorAll('.resumeItem');
+    resumeItems.forEach(function (item) {
+        let jobTitleHeight = item.offsetHeight;
+        item.addEventListener('click', function () {
+            let jobDescHeight = this.children[4].offsetHeight;
+            if(this.classList.contains('active')) {
+                this.classList.remove('active')
+                this.style.height = jobTitleHeight + "px"
+            } else {
+                this.classList.add('active')
+                this.style.height = jobTitleHeight + jobDescHeight + "px"
+            }
+            setTimeout(function () { scroll.update(); }, 1000)
+        })
+    });
+}
+
+experienceToggle();
 
 
 

@@ -1,10 +1,10 @@
 .homeQualifications {
     .grid {
-        padding-top: 0;
+        padding-top: 5rem;
         padding-bottom: 10rem;
 
         .textBox {
-            border: 1px solid red;
+            //border: 1px solid red;
             grid-column: 2 / span 4;
             display: flex;
             flex-direction: column;
@@ -37,16 +37,94 @@
         }
 
         .workHistory {
-            border: 1px solid red;
             grid-column: 7 / span 7;
+            border-top: 2px solid $gray30;
 
             li {
-                border: 1px solid blue;
+                cursor: pointer;
                 width: 100%;
                 display: grid;
                 grid-template-columns: repeat(7, 1fr);
                 grid-gap: 1.125rem;
-                grid-row-gap: 0;
+                grid-row-gap: 2rem;
+                padding-top: 2rem;
+                border-bottom: 2px solid $gray30;
+                overflow: hidden;
+                height: 7rem;
+                transition: height 1000ms $inOutQuint 0ms;
+
+                .col1 {
+                    grid-column: 1 / span 3;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    .logo {
+                        width: 3rem;
+                        height: 3rem;
+                        border-radius: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: $gray100;
+                    }
+
+                    h4 {
+                        margin-top: 0.25rem;
+                        margin-left: 1rem;
+                        font-size: 2.5rem;
+                    }
+                }
+
+                .title,
+                .duration {
+                    height: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    font-family: $mono;
+                    text-transform: uppercase;
+                    text-transform: uppercase;
+                    font-size: 1rem;
+                }
+
+                .title {
+                    grid-column: 4 / span 2;
+                    color: $gray50;
+                }
+
+                .duration {
+                    grid-column: 6 / span 1;
+                    color: $gray30;
+                }
+
+                .iconContainer {
+                    grid-column: 7 / span 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+
+                    .icon {
+                        stroke: $gray100;
+                        stroke-width: 2px;
+                        fill: none;
+                        transition: transform 1000ms $inOutQuint 0ms;
+                    }
+                }
+
+                .desc {
+                    grid-column: 1 / span 6;
+                    padding: 0 0 2vw 4vw;
+                    font-size: 1.5rem;
+                    line-height: 140%;
+                    letter-spacing: 0;
+                    color: $gray70;
+                }
+
+                &.active {
+                    .iconContainer .icon{ transform: rotate(-135deg); }
+                    .desc { opacity: 1; }
+                }
             }
         }
     }

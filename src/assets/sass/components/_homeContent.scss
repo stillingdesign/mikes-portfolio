@@ -1,0 +1,138 @@
+.homeContent {
+    margin-top: -4vw;
+    .grid {
+        padding-bottom: 10rem;
+
+        .homeArticle {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            &:nth-child(1) {
+                grid-column: 2 / span 6;
+                margin-top: 8rem;
+                align-items: flex-start;
+            }
+
+            &:nth-child(2) {
+                grid-column: 8 / span 6;
+                margin-bottom: 8rem;
+                align-items: flex-end;
+            }
+
+            &:nth-child(3) {
+                grid-column: 2 / span 6;
+                margin-top: 8rem;
+                align-items: flex-start;
+            }
+
+            &:nth-child(4) {
+                grid-column: 8 / span 6;
+                align-items: flex-end;
+            }
+
+            a {
+                max-width: calc(100% - 4rem);
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                overflow: hidden;
+
+                .imgOuter {
+                    overflow: hidden;
+                    width: 100%;
+
+                    .imgInner {
+                        display: flex;
+                        width: 100%;
+
+                        img { max-width: 100%; }
+                    }
+                }
+
+                h5 {
+                    margin-top: 1rem;
+                    font-size: 2.5vw;
+                    color: $gray100;
+                }
+            }
+        }
+    }
+
+
+    //1920 Breakpoint
+    @media screen and (min-width: 1920px)  {
+        margin-top: -4.5rem;
+
+        .grid {
+            .homeArticle {
+                a h5 { font-size: 3rem; }
+            }
+        }
+    }
+
+
+    //1440 Breakpoint
+    @media screen and (max-width: 1440px)  { margin-top: -6rem; }
+
+
+
+    //1280 Breakpoint
+    @media screen and (max-width: 1280px)  {
+        margin-top: -4rem;
+
+        .grid {
+            .homeArticle {
+                &:nth-child(1) { margin-top: 4rem; }
+                &:nth-child(2) { margin-bottom: 4rem; }
+                &:nth-child(3) { margin-top: 4rem; }
+                a { max-width: calc(100% - 2rem); }
+            }
+        }
+    }
+
+
+
+    //960 Breakpoint
+    @media screen and (max-width: 960px)  {
+        margin-top: 0;
+
+        .grid {
+            .homeArticle {
+
+                &:nth-child(1),
+                &:nth-child(3) { margin-top: 0; }
+
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3) { margin-bottom: 4rem; }
+
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) { align-items: flex-start; }
+
+                a { max-width: 100%; }
+            }
+        }
+    }
+
+
+
+    //640 Breakpoint
+    @media screen and (max-width: 640px)  {
+        .grid {
+            padding-top: 2rem;
+            
+            .homeArticle {
+
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3) { margin-bottom: 3rem; }
+
+                a h5 { font-size: 1.5rem }
+            }
+        }
+    }
+}

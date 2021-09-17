@@ -7,6 +7,7 @@
             font-size: 16.5vw;
             line-height: 90%;
             width: 100%;
+            &.content { grid-column: 2 / span 12; }
         }
 
         .linkBlock {
@@ -15,6 +16,7 @@
             align-items: center;
             justify-content: flex-start;
             a { margin-bottom: 1.75vw; }
+            &.content { grid-column: 2 / span 2; }
         }
 
         .lineTwo {
@@ -24,6 +26,7 @@
             font-size: 15vw;
             line-height: 100%;
             width: 100%;
+            &.content { grid-column: 4 / span 10; }
         }
     }
 
@@ -52,13 +55,18 @@
                 grid-column: 1 / span 8;
                 font-size: 20vw;
                 margin-left: -1vw;
+                &.content { grid-column: 1 / span 11; }
             }
 
-            .linkBlock { grid-column: 10 / span 5; }
+            .linkBlock {
+                grid-column: 10 / span 5;
+                &.content { grid-column: 12 / span 3; }
+            }
     
             .lineTwo {
                 grid-column: 1 / span 14;
                 font-size: 18vw;
+                &.content { grid-column: 3 / span 12; }
             }
         }
     }
@@ -74,10 +82,12 @@
             align-items: stretch;
 
             .lineOne {width: auto;}
+
             .linkBlock {
                 flex-grow: 1;
                 justify-content: center;
                 a { margin-bottom: 1.25rem; }
+                &.content { display: none; }
             }
         }
     }
@@ -91,6 +101,7 @@
                 font-size: 25vw;
                 text-align: center;
                 margin-left: 0;
+                &.content { font-size: 22vw; }
             }
 
             .linkBlock { display: none; }
@@ -99,6 +110,7 @@
                 font-size: 22.5vw;
                 text-align: center;
                 margin-left: -2vw;
+                &.content { font-size: 20vw; }
             }
         }
     }

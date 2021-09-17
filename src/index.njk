@@ -258,3 +258,43 @@ eleventyComputed:
 
   </div>
 </section>
+
+
+
+<!-- Case Studies Title -->
+<section class="gridContainer homeCaseStudiesTitle">
+  <div class="grid">
+
+    <h3 class="allCaps lineOne content">Recent</h3>
+    <div class="linkBlock content">
+      <a class="linkUnderlineMedium" href="/projects" title="View all of Mike's work">View all content</a>
+    </div>
+    <h3 class="allCaps serif lineTwo content">Articles</h3>
+
+  </div>
+</section>
+
+
+
+<!-- Content -->
+<section class="gridContainer homeContent">
+  <div class="grid">
+
+    {% for page in blogPosts.slice(0, 4) %}
+    <div class="homeArticle">
+      <a href="/blog/{{ page.slug | url }}">
+
+        <div class="imgOuter">
+          <div class="imgInner">
+            <img src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
+          </div>
+        </div>
+
+        <h5>{{page.postTitle}}</h5>
+
+      </a>
+    </div>
+    {% endfor %}
+
+  </div>
+</section>

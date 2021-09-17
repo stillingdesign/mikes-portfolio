@@ -49,7 +49,7 @@
                         width: 100%;
                         padding: 1rem 0 0 0;
 
-                        h3 {
+                        h4 {
                             margin-left: -0.25vw;
                             font-size: 3vw;
                             color: $gray100;
@@ -85,8 +85,7 @@
                 a {
                     .labelOuter {
                         .labelInner {
-    
-                            h3 {
+                            h4 {
                                 margin-left: -0.25rem;
                                 font-size: 3.5rem;
                             }
@@ -155,7 +154,18 @@
                 min-width: 100%;
                 margin-right: 0;
 
-                a { width: 100%; }
+                a {
+                    width: 100%;
+
+                    .labelOuter {
+                        .labelInner {
+                            h4 {
+                                margin-left: -0.125rem;
+                                font-size: 2.5rem;
+                            }
+                        }
+                    }
+                }
     
                 &:nth-child(1),
                 &:nth-child(2) { margin-bottom: 3rem; }

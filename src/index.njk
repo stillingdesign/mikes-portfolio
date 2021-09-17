@@ -10,6 +10,8 @@ eleventyComputed:
   barba: "index"
 ---
 
+
+
 <!-- Headline -->
 <section class="gridContainer homeHeadline">
   <div class="grid">
@@ -20,6 +22,8 @@ eleventyComputed:
 
   </div>
 </section>
+
+
 
 <!-- Hero Image -->
 <section class="gridContainer homeHeroImage">
@@ -42,6 +46,8 @@ eleventyComputed:
   </div>
 </section>
 
+
+
 <!-- Intro -->
 <section class="gridContainer homeIntro">
   <div class="grid">
@@ -59,18 +65,22 @@ eleventyComputed:
   </div>
 </section>
 
+
+
 <!-- Case Studies Title -->
 <section class="gridContainer homeCaseStudiesTitle">
   <div class="grid">
 
-    <p class="allCaps lineOne">Case</p>
+    <h3 class="allCaps lineOne">Case</h3>
     <div class="linkBlock">
       <a class="linkUnderlineMedium" href="/projects" title="View all of Mike's work">View all projects</a>
     </div>
-    <p class="allCaps serif lineTwo">Studies</p>
+    <h3 class="allCaps serif lineTwo">Studies</h3>
 
   </div>
 </section>
+
+
 
 <!-- Case Studies -->
 <section class="gridContainer homeCaseStudies" id="homeCaseStudies">
@@ -88,13 +98,59 @@ eleventyComputed:
 
         <div class="labelOuter">
           <div class="labelInner">
-            <h3>{{page.postTitle}}</h3>
+            <h4>{{page.postTitle}}</h4>
           </div>
         </div>
 
       </a>
     </div>
     {% endfor %}
+
+  </div>
+</section>
+
+
+
+<!-- Qualifications -->
+<section class="gridContainer homeQualifications">
+  <div class="grid">
+
+    <div class="textBox">
+      <h3>
+        Qualifications &
+        <span class="serif">Experience</span>
+      </h3>
+      <ul>
+        <li>Figma</li>
+        <li>Adobe</li>
+        <li>Webflow</li>
+        <li>Blender</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>Zapier</li>
+        <li>Customer.io</li>
+        <li>Segment</li>
+        <li>Marketing</li>
+        <li>Strategy</li>
+        <li>Branding</li>
+        <li>Systems</li>
+      </ul>
+    </div>
+
+    <ul class="workHistory">
+
+      <li>
+        <div class="col1">
+          <div class="logo"></div>
+          <h4>Abstract</h4>
+        </div>
+        <p>Sr Web Designer</p>
+        <p>Current</p>
+        <div class="icon"></div>
+      </li>
+
+    </ul>
 
   </div>
 </section>

@@ -1,0 +1,53 @@
+.homeQualifications {
+    .grid {
+        padding-top: 0;
+        padding-bottom: 10rem;
+
+        .textBox {
+            border: 1px solid red;
+            grid-column: 2 / span 4;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            h3 {
+                font-size: 4.5vw;
+                color: $gray100;
+                margin-bottom: 2rem;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: flex-start;
+                font-family: $mono;
+                text-transform: uppercase;
+
+                li {
+                    padding: 4px 8px;
+                    margin-right: 8px;
+                    margin-bottom: 8px;
+                    color: $gray50;
+                    background-color: $gray20;
+                }
+            }
+        }
+
+        .workHistory {
+            border: 1px solid red;
+            grid-column: 7 / span 7;
+
+            li {
+                border: 1px solid blue;
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                grid-gap: 1.125rem;
+                grid-row-gap: 0;
+            }
+        }
+    }
+}

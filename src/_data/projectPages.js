@@ -12,7 +12,7 @@ const client = contentful.createClient({
 
 
 module.exports = function() {
-    return client.getEntries({ content_type: 'projectPage' })
+    return client.getEntries({ content_type: 'projectPage', order: 'fields.postDate' })
     .then(function(response) {
 
         //Store Blog Assets
@@ -51,7 +51,7 @@ module.exports = function() {
             item.fields.postContent = documentToHtmlString(item.fields.postContent, renderOptions);
 
             //Replace 11ty Date with Contentful Date
-            item.fields.date = new Date(item.sys.updatedAt);
+            item.fields.date = new Date(item.fields.postDate);
 
             //Return Fields
             return item.fields;

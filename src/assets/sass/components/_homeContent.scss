@@ -38,6 +38,8 @@
                 align-items: flex-start;
                 justify-content: flex-start;
                 overflow: hidden;
+                background-color: $gray90;
+                border-radius: 1rem;
 
                 .imgOuter {
                     overflow: hidden;
@@ -47,14 +49,36 @@
                         display: flex;
                         width: 100%;
 
-                        img { max-width: 100%; }
+                        img {
+                            max-width: 100%;
+                            transform-origin: center;
+                            transition: transform 800ms $inOutCubic 0ms;
+                        }
                     }
                 }
 
                 h5 {
-                    margin-top: 1rem;
                     font-size: 2.5vw;
+                    color: $gray10;
+                    padding: 1.5rem;
+                }
+
+                .date {
+                    position: absolute;
+                    top: 1.5rem;
+                    right: 1.5rem;
+                    padding: 0.25rem 0.35rem 0.15rem 0.35rem;
+                    background-color: $gray10;
                     color: $gray100;
+                }
+
+                @media (hover: hover) {
+                    &:hover {
+                        .imgOuter .imgInner img {
+                            transform: scale3d(1.2,1.2,1.2);
+                            transition: transform 1200ms $inOutCubic 0ms;
+                        }
+                    }
                 }
             }
         }
@@ -106,7 +130,7 @@
 
                 &:nth-child(1),
                 &:nth-child(2),
-                &:nth-child(3) { margin-bottom: 4rem; }
+                &:nth-child(3) { margin-bottom: 3rem; }
 
                 &:nth-child(1),
                 &:nth-child(2),
@@ -114,6 +138,7 @@
                 &:nth-child(4) { align-items: flex-start; }
 
                 a { max-width: 100%; }
+                a h5 { font-size: 4vw }
             }
         }
     }
@@ -124,7 +149,7 @@
     @media screen and (max-width: 640px)  {
         .grid {
             padding-top: 2rem;
-            
+
             .homeArticle {
 
                 &:nth-child(1),

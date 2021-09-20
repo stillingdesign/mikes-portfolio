@@ -280,7 +280,7 @@ eleventyComputed:
 <section class="gridContainer homeContent">
   <div class="grid">
 
-    {% for page in blogPosts.slice(0, 4) %}
+    {% for page in blogPosts.slice(0, 4) | reverse %}
     <div class="homeArticle">
       <a href="/blog/{{ page.slug | url }}">
 
@@ -291,6 +291,9 @@ eleventyComputed:
         </div>
 
         <h5>{{page.postTitle}}</h5>
+        <div class="date">
+          <p>{{page.postDate}}</p>
+        </div>
 
       </a>
     </div>

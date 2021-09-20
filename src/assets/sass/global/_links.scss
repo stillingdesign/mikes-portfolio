@@ -8,3 +8,52 @@ a {
         }
     }
 }
+
+.linkUnderlineMedium {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0 0.8rem 0;
+    overflow: hidden;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $gray100;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $gray100;
+        transition: width 650ms $inOutQuint 0ms;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $gradient;
+        transition: width 500ms $inOutQuint 0ms;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            color: $gray100;
+
+            &:before {
+                width: 0;
+                transition: width 500ms $inOutQuint 0ms;
+            }
+        
+            &:after {
+                width: 100%;
+                transition: width 650ms $inOutQuint 0ms;
+            }
+        }
+    }
+}

@@ -1,0 +1,81 @@
+.homeClosing {
+    padding-top: 8rem;
+    padding-bottom: 10rem;
+
+    .grid {
+
+        .imgOuter {
+            grid-column: 2 / span 3;
+            height: 100%;
+            width: 100%;
+            background-color: $gray30;
+            background-image: url('../img/closingHeadshot.jpg');
+            background-size: cover;
+            background-position: top center;
+        }
+
+        h5 {
+            grid-column: 6 / span 8;
+            font-size: 3vw;
+            line-height: 120%;
+        }
+    }
+
+
+
+    //1920 Max Breakpoint
+    @media screen and (min-width: 1921px) {
+        .grid h5 {
+            font-size: 3.5rem;
+        }
+    }
+
+
+
+    //960 Breakpoint
+    @media screen and (max-width: 960px) {
+        padding-top: 8rem;
+
+        .grid {
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: flex-start;
+
+            .imgOuter {
+                min-width: 40%;
+                height: 420px;
+                margin-right: 3rem;
+            }
+
+            h5 {
+                font-size: 4vw;
+            }
+        }
+    }
+
+
+
+    //640 Breakpoint
+    @media screen and (max-width: 640px) {
+        padding-top: 5rem;
+        padding-bottom: 6rem;
+
+        .grid {
+            flex-direction: column-reverse;
+            align-items: stretch;
+            justify-content: flex-start;
+
+            .imgOuter {
+                min-width: 40%;
+                height: 420px;
+                margin-right: 0;
+                margin-top: 2rem;
+            }
+
+            h5 {
+                font-size: 1.25rem;
+                line-height: 150%;
+            }
+        }
+    }
+}

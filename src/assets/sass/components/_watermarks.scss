@@ -116,51 +116,124 @@
     }
 }
 
-.linkUnderlineMedium {
-    //border: 1px solid red;
+
+.marquee {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 1rem 0 0.8rem 0;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
     overflow: hidden;
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: $gray100;
 
-    &:before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        height: 2px;
-        background-color: $gray100;
-        transition: width 650ms $inOutQuint 0ms;
-    }
+    .marqueeTrack {
+        margin-top: 0.75vw;
+        flex-shrink: 0;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+        flex-wrap: nowrap;
 
-    &:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: $gradient;
-        transition: width 500ms $inOutQuint 0ms;
-    }
+        .marqueeItem {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row;
+            font-size: 10vw;
+            text-transform: uppercase;
+            color: $gray0;
 
-    @media (hover: hover) {
-        &:hover {
-            color: $gray100;
-
-            &:before {
-                width: 0;
-                transition: width 500ms $inOutQuint 0ms;
+            .marqueeDot {
+                width: 2vw;
+                height: 2vw;
+                margin-bottom: 0.5vw;
+                background-color: $gray0;
+                border-radius: 1vw;
+                margin: 0 4vw 0.5vw 4vw;
             }
-        
-            &:after {
-                width: 100%;
-                transition: width 650ms $inOutQuint 0ms;
+        }
+    }
+
+
+
+    //1920 Max Breakpoint
+    @media screen and (min-width: 1920px) {
+        .marqueeTrack {
+            margin-top: 1rem;
+
+            .marqueeItem {
+                font-size: 12rem;
+
+                .marqueeDot {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    border-radius: 1.25rem;
+                    margin: 0 4.5rem 0.8rem 4.5rem;
+                }
+            }
+        }
+    }
+
+
+
+    //1440 Breakpoint
+    @media screen and (max-width: 1440px) {
+        .marqueeTrack {
+            margin-top: 0.75vw;
+
+            .marqueeItem {
+                font-size: 14vw;
+
+                .marqueeDot {
+                    width: 3vw;
+                    height: 3vw;
+                    background-color: $gray0;
+                    border-radius: 1.5vw;
+                    margin: 0 4.25vw 0.75vw 4.25vw;
+                }
+            }
+        }
+    }
+
+
+    //960 Breakpoint
+    @media screen and (max-width: 960px) {
+        .marqueeTrack {
+            margin-top: 2vw;
+
+            .marqueeItem {
+                font-size: 18vw;
+
+                .marqueeDot {
+                    width: 3vw;
+                    height: 3vw;
+                    background-color: $gray0;
+                    border-radius: 1.5vw;
+                    margin: 0 4.25vw 1.25vw 4.25vw;
+                }
+            }
+        }
+    }
+
+
+
+    //640 Breakpoint
+    @media screen and (max-width: 640px) {
+        .marqueeTrack {
+            margin-top: 4vw;
+
+            .marqueeItem {
+                font-size: 30vw;
+
+                .marqueeDot {
+                    width: 4.5vw;
+                    height: 4.5vw;
+                    background-color: $gray0;
+                    border-radius: 2.25vw;
+                    margin: 0 6vw 1.5vw 6vw;
+                }
             }
         }
     }

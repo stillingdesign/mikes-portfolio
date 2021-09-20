@@ -32,6 +32,24 @@ const scroll = new LocomotiveScroll({
 
 
 
+scroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy(".locomotive", {
+  scrollTop(value) {
+    return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y;
+  }, 
+  getBoundingClientRect() {
+    return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+  },
+  pinType: document.querySelector(".locomotive").style.transform ? "transform" : "fixed"
+});
+
+
+
+
+
+
+
 
 // Mobile Menu Toggle
 const menuIcon = document.querySelector('.navBtnContainer');
@@ -61,10 +79,32 @@ menuToggle();
 const footerMarqueeAnimate = function () {
     const footerMarquee = document.querySelector('.footerMarqueeItem');
     const footerMarqueeTrack = document.querySelector('.footerMarqueeTrack');
-    const marqueeItemWidth = footerMarquee.offsetWidth;
-    console.log(marqueeItemWidth);
-    const marqueeTL = gsap.timeline({repeat:-1, defaults:{ease:"none"}});
-    marqueeTL.to(footerMarqueeTrack,{x:-marqueeItemWidth, duration:20});  
+    const footerMarqueeItemWidth = footerMarquee.offsetWidth;
+    console.log(footerMarqueeItemWidth);
+    const footerMarqueeTL = gsap.timeline({repeat:-1, defaults:{ease:"none"}});
+    footerMarqueeTL.to(footerMarqueeTrack,{x:-footerMarqueeItemWidth, duration:20});  
+}
+
+
+
+
+
+// Marquee
+const marqueeAnimate = function () {
+    const marquee = document.querySelectorAll('.marqueeTrack');
+    marquee.forEach(function (marquee){
+        gsap.to(marquee, {
+            scrollTrigger: {
+                trigger: marquee,
+                scroller: ".locomotive",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
+            },
+            x: "-33.33%",
+            ease: "none"
+        })
+    })
 }
 
 
@@ -102,6 +142,7 @@ experienceToggle();
 imagesLoaded( 'body', function() {
     scroll.update();
     footerMarqueeAnimate();
+    marqueeAnimate();
 });
 
 

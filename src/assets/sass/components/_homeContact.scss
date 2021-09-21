@@ -1,0 +1,105 @@
+.homeContact {
+    .grid {
+        padding-bottom: 10rem;
+
+        .divider {
+            grid-column: 2 / span 12;
+            width: 100%;
+            height: 2px;
+            background-color: $gray30;
+            margin-bottom: 10rem;
+        }
+
+        p {
+            grid-column: 2 / span 10;
+            font-size: 14vw;
+
+            .serif {
+                font-size: 0.9em;
+            }
+        }
+
+        .btnContainer {
+            grid-column: 12 / span 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            a { margin-bottom: 1.5vw; }
+        }
+    }
+
+
+
+    //1920 Max Breakpoint
+    @media screen and (min-width: 1921px) {
+        .grid {
+            p { font-size: 16.5rem; }
+            .btnContainer a { margin-bottom: 1rem; }
+        }
+    }
+
+
+
+    //1280 Breakpoint
+    @media screen and (max-width: 1280px) {
+
+        .grid {
+
+            .divider {margin-bottom: 9rem;}
+
+            p {
+                grid-column: 2 / span 9;
+                font-size: 10vw;
+                text-align: center;
+            }
+
+            .btnContainer {
+                grid-column: 11 / span 3;
+            }
+        }
+    }
+
+
+
+    //960 Breakpoint
+    @media screen and (max-width: 960px) {
+
+        .grid {
+
+            .divider {margin-bottom: 8rem;}
+
+            p {
+                width: 100%;
+                font-size: 17vw;
+            }
+
+            .btnContainer {
+                width: 100%;
+                align-items: center;
+
+                a {
+                    margin-top: 1rem; 
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+
+
+    //640 Breakpoint
+    @media screen and (max-width: 640px) {
+
+        .grid {
+            padding-bottom: 6rem;
+            .divider {margin-bottom: 5.5rem;}
+
+            p {
+                width: 100%;
+                font-size: 30vw;
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 .homeContact {
     .grid {
-        padding-bottom: 10rem;
+        padding-bottom: 9rem;
 
         .divider {
             grid-column: 2 / span 12;
@@ -51,8 +51,7 @@
 
             p {
                 grid-column: 2 / span 9;
-                font-size: 10vw;
-                text-align: center;
+                font-size: 12vw;
             }
 
             .btnContainer {
@@ -67,12 +66,14 @@
     @media screen and (max-width: 960px) {
 
         .grid {
+            padding-bottom: 8rem;
 
             .divider {margin-bottom: 8rem;}
 
             p {
                 width: 100%;
                 font-size: 17vw;
+                text-align: center;
             }
 
             .btnContainer {

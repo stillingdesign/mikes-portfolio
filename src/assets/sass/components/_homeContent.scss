@@ -67,9 +67,12 @@
                     position: absolute;
                     top: 1.5rem;
                     right: 1.5rem;
-                    padding: 0.25rem 0.35rem 0.15rem 0.35rem;
+                    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+                    font-family: $mono;
+                    font-size: 0.875rem;
                     background-color: $gray10;
-                    color: $gray100;
+                    color: $gray70;
+                    border-radius: 0.75rem;
                 }
 
                 @media (hover: hover) {

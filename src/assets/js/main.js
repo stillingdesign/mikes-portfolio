@@ -74,6 +74,33 @@ menuToggle();
 
 
 
+//Desktop Only
+ScrollTrigger.matchMedia({
+    "(min-width: 960px)": function() {
+
+        // Scroll Trigger Hero Image
+        const heroImgInnerAnimate = function () {
+            const heroImgInner = document.querySelectorAll('.heroImgInner');
+            heroImgInner.forEach(function (heroImgInner){
+                gsap.to(heroImgInner, {
+                    scrollTrigger: {
+                        trigger: heroImgInner,
+                        scroller: ".locomotive",
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: 1,
+                    },
+                    y: "-43.75%",
+                    ease: "none"
+                })
+            })
+        }
+
+        heroImgInnerAnimate();
+
+    }
+})
+
 
 // Footer Marquee
 const footerMarqueeAnimate = function () {
@@ -84,9 +111,6 @@ const footerMarqueeAnimate = function () {
     const footerMarqueeTL = gsap.timeline({repeat:-1, defaults:{ease:"none"}});
     footerMarqueeTL.to(footerMarqueeTrack,{x:-footerMarqueeItemWidth, duration:20});  
 }
-
-
-
 
 
 // Scroll Trigger Marquee
@@ -107,6 +131,7 @@ const marqueeAnimate = function () {
     })
 }
 
+
 // Scroll Trigger Spin
 const spinTextAnimate = function () {
     const spinText = document.querySelectorAll('.spinText');
@@ -124,6 +149,8 @@ const spinTextAnimate = function () {
         })
     })
 }
+
+
 
 
 
@@ -162,6 +189,7 @@ imagesLoaded( 'body', function() {
     footerMarqueeAnimate();
     marqueeAnimate();
     spinTextAnimate();
+    ScrollTrigger.matchMedia();
 });
 
 
@@ -174,6 +202,7 @@ imagesLoaded( 'body', function() {
 barba.hooks.after(() => {
     marqueeAnimate();
     spinTextAnimate();
+    ScrollTrigger.matchMedia();
     scroll.update();
 });
 

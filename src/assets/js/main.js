@@ -89,7 +89,7 @@ const footerMarqueeAnimate = function () {
 
 
 
-// Marquee
+// Scroll Trigger Marquee
 const marqueeAnimate = function () {
     const marquee = document.querySelectorAll('.marqueeTrack');
     marquee.forEach(function (marquee){
@@ -102,6 +102,24 @@ const marqueeAnimate = function () {
                 scrub: 1,
             },
             x: "-33.33%",
+            ease: "none"
+        })
+    })
+}
+
+// Scroll Trigger Spin
+const spinTextAnimate = function () {
+    const spinText = document.querySelectorAll('.spinText');
+    spinText.forEach(function (spinText){
+        gsap.to(spinText, {
+            scrollTrigger: {
+                trigger: spinText,
+                scroller: ".locomotive",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
+            },
+            rotation:360,
             ease: "none"
         })
     })
@@ -143,6 +161,7 @@ imagesLoaded( 'body', function() {
     scroll.update();
     footerMarqueeAnimate();
     marqueeAnimate();
+    spinTextAnimate();
 });
 
 
@@ -153,6 +172,8 @@ imagesLoaded( 'body', function() {
 
 /* Barba */
 barba.hooks.after(() => {
+    marqueeAnimate();
+    spinTextAnimate();
     scroll.update();
 });
 

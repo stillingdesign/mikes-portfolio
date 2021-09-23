@@ -74,32 +74,25 @@ menuToggle();
 
 
 
-//Desktop Only
-ScrollTrigger.matchMedia({
-    "(min-width: 960px)": function() {
 
-        // Scroll Trigger Hero Image
-        const heroImgInnerAnimate = function () {
-            const heroImgInner = document.querySelectorAll('.heroImgInner');
-            heroImgInner.forEach(function (heroImgInner){
-                gsap.to(heroImgInner, {
-                    scrollTrigger: {
-                        trigger: heroImgInner,
-                        scroller: ".locomotive",
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: 1,
-                    },
-                    y: "-43.75%",
-                    ease: "none"
-                })
-            })
-        }
 
-        heroImgInnerAnimate();
-
-    }
-})
+// Scroll Trigger Hero Image
+const heroImgInnerAnimate = function () {
+    const heroImgInner = document.querySelectorAll('.heroImgInner');
+    heroImgInner.forEach(function (heroImgInner){
+        gsap.to(heroImgInner, {
+            scrollTrigger: {
+                trigger: heroImgInner,
+                scroller: ".locomotive",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
+            },
+            y: "-43.75%",
+            ease: "none"
+        })
+    })
+}
 
 
 // Footer Marquee
@@ -189,7 +182,11 @@ imagesLoaded( 'body', function() {
     footerMarqueeAnimate();
     marqueeAnimate();
     spinTextAnimate();
-    ScrollTrigger.matchMedia();
+    ScrollTrigger.matchMedia({
+        "(min-width: 960px)": function() {
+            heroImgInnerAnimate();
+        }
+    })
 });
 
 
@@ -202,7 +199,11 @@ imagesLoaded( 'body', function() {
 barba.hooks.after(() => {
     marqueeAnimate();
     spinTextAnimate();
-    ScrollTrigger.matchMedia();
+    ScrollTrigger.matchMedia({
+        "(min-width: 960px)": function() {
+            heroImgInnerAnimate();
+        }
+    })
     scroll.update();
 });
 

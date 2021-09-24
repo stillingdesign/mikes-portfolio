@@ -40,6 +40,18 @@ module.exports = function() {
             item.fields.heroImage.url = `https:${heroImgUrl}`;
             item.fields.heroImage.altText = `${heroImgAltText}`;
 
+            //Grab Featured Thumbnail Asset
+            let featuredThumbnailUrl = "";
+            let featuredThumbnailAltText = "";
+            const featuredThumbnailId = item.fields.featuredThumbnail.sys.id;
+            const featuredThumbnailData = assets.find(function(asset) { return asset.sys.id == featuredThumbnailId });
+            if (featuredThumbnailData) {
+                featuredThumbnailUrl = featuredThumbnailData.fields.file.url;
+                featuredThumbnailAltText = featuredThumbnailData.fields.description;
+            }
+            item.fields.featuredThumbnail.url = `https:${featuredThumbnailUrl}`;
+            item.fields.featuredThumbnail.altText = `${featuredThumbnailAltText}`;
+
             // Render Nested Assets
             const renderOptions = {
                 renderNode: {

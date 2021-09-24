@@ -6,7 +6,6 @@
         padding-bottom: 10rem;
 
         .homeCaseStudy {
-            //border: 1px solid red;
 
             a {
                 display: flex;
@@ -20,24 +19,21 @@
                     align-items: flex-start;
                     justify-content: flex-start;
                     width: 100%;
-                    height: 0;
-                    padding-top: 128%;
                     overflow: hidden;
     
                     .imgInner {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
                         width: 100%;
                         height: 100%;
                         display: flex;
                         align-items: flex-start;
                         justify-content: flex-start;
-                        background-color: red;
+                        overflow: hidden;
     
                         img {
-                            height: 100%;
-                            width: auto;
+                            width: 100%;
+                            transform-origin: center;
+                            transform: scale3d(1.25,1.25,1.25);
+                            transition: transform 800ms $inOutCubic 0ms;
                         }
                     }
                 }
@@ -53,6 +49,15 @@
                             margin-left: -0.25vw;
                             font-size: 3vw;
                             color: $gray100;
+                        }
+                    }
+                }
+
+                @media (hover: hover) {
+                    &:hover {
+                        .imgOuter .imgInner img {
+                            transform: scale3d(1.1,1.1,1.1);
+                            transition: transform 1200ms cubic-bezier(0,0,0.2,1) 0ms;
                         }
                     }
                 }

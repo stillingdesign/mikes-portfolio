@@ -138,13 +138,13 @@ eleventyComputed:
 <section class="gridContainer homeCaseStudies" id="homeCaseStudies">
   <div class="grid homeCaseStudiesContainer" id="homeCaseStudiesContainer">
 
-    {% for page in projectPages.slice(0, 3) %}
+    {% for page in projectPages.slice(0, 3) | reverse %}
     <div class="homeCaseStudy">
       <a href="/projects/{{ page.slug | url }}">
 
         <div class="imgOuter">
           <div class="imgInner">
-            <img src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
+            <img src="{{ page.featuredThumbnail.url }}" alt="{{ page.featuredThumbnail.altText }}"/>
           </div>
         </div>
 

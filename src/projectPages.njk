@@ -16,12 +16,30 @@ eleventyComputed:
   barba: "{{- page.postTitle | slug -}}"
 ---
 
-<img src="{{ page.metaImage }}" alt=""/>
+<!-- Headline -->
+<section class="gridContainer projectHeadline">
+  <div class="grid">
 
-<h1>
-    {{ page.postTitle }}
-</h1>
-<br>
+    <h1>
+      {{ page.postHeadline }}
+    </h1>
+
+    <div class="textBox">
+      <p class="year">©{{- page.yearCreated -}}</p>
+      <div class="details">
+        <a class="detail company" href="{{ page.companyLink }}" target="_blank" rel="noopener noreferrer">
+          <p class="label">With:</p>
+          <p class="name">{{ page.company }}</p>
+        </a>
+        <a class="detail client" href="{{ page.clientLink }}" target="_blank" rel="noopener noreferrer">
+          <p class="label">For:</p>
+          <p class="name">{{ page.client }}</p>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <img src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
 

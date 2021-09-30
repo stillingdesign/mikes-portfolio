@@ -45,7 +45,7 @@
     // 1920 Max Breakpoint
     @media screen and (min-width: 1920px) {
         .grid {
-            .projectSectionLabel { margin-top: 1.75rem; }
+            .projectSectionLabel { margin-top: 2.25rem; }
         }
     }
 
@@ -101,7 +101,7 @@
     span { color:$gray100; }
 
     // 1920 Max Breakpoint
-    @media screen and (min-width: 1920px) { font-size: 1.5rem; }
+    @media screen and (min-width: 1920px) { font-size: 1rem; }
 
     // 960 Breakpoint
     @media screen and (max-width: 960px) {

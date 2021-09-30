@@ -1,0 +1,139 @@
+.projectOverview {
+
+    .grid {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+
+        .projectSectionLabel {
+            grid-column: 2 / span 3;
+            margin-top: 1.5vw;
+        }
+
+        .projectTextLarge {
+            grid-column: 6 / span 8;
+            margin-bottom: 10rem;
+        }
+
+        .textBox {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            &.textBox1 {
+                grid-column: 2 / span 6;
+                align-items: flex-start;
+            }
+
+            &.textBox2 {
+                grid-column: 8 / span 6;
+                align-items: flex-end;
+            }
+
+            .textOuter {
+                max-width: calc(100% - 5rem);
+                border-top: 2px solid $gray30;
+
+                .projectSectionLabel {
+                    margin-top: 1rem;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+
+
+    // 1920 Max Breakpoint
+    @media screen and (min-width: 1920px) {
+        .grid {
+            .projectSectionLabel { margin-top: 1.75rem; }
+        }
+    }
+
+
+
+    // 960 Breakpoint
+    @media screen and (max-width: 960px) {
+        .grid {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+            .projectTextLarge { margin-bottom: 6rem;}
+
+            .textBox {
+                &.textBox1 { margin-bottom: 6rem; }
+                &.textBox2 { align-items: flex-start; }
+    
+                .textOuter { max-width: 100%; }
+            }
+        }
+    }
+
+
+
+    // 640 Breakpoint
+    @media screen and (max-width: 640px) {
+        .grid {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            .projectTextLarge { margin-bottom: 3rem;}
+
+            .textBox {
+                &.textBox1 { margin-bottom: 3rem; }
+    
+                .textOuter {
+                    .projectSectionLabel {
+                        margin-top: 1rem;
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.projectSectionLabel {
+    font-size: 1.2vw;
+    font-family: $mono;
+    text-transform: uppercase;
+    color: $gray50;
+    span { color:$gray100; }
+
+    // 1920 Max Breakpoint
+    @media screen and (min-width: 1920px) { font-size: 1.5rem; }
+
+    // 960 Breakpoint
+    @media screen and (max-width: 960px) {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.projectTextLarge {
+    font-size: 3vw;
+    line-height: 120%;
+
+    // 1920 Max Breakpoint
+    @media screen and (min-width: 1920px) { font-size: 3.5rem; }
+
+    // 960 Breakpoint
+    @media screen and (max-width: 960px) { font-size: 5vw; }
+
+    // 640 Breakpoint
+    @media screen and (max-width: 640px) { font-size: 2rem; }
+}
+
+.projectText {
+    font-size: 1.6vw;
+    line-height: 140%;
+
+    // 1920 Max Breakpoint
+    @media screen and (min-width: 1920px) { font-size: 2rem; }
+
+    // 960 Breakpoint
+    @media screen and (max-width: 960px) { font-size: 3.5vw; }
+
+    // 640 Breakpoint
+    @media screen and (max-width: 640px) { font-size: 1.25rem; }
+}

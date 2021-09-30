@@ -43,7 +43,8 @@ eleventyComputed:
 
 
 
-<section class="projectHero">
+<!-- Hero -->
+<section class="gridContainer projectHero">
   <div class="grid">
 
     <div class="imgOuter">
@@ -55,13 +56,45 @@ eleventyComputed:
 
 
 
-<section class="projectContent">
-    {{- page.postContent | safe -}}
+<!-- Overview -->
+<section class="gridContainer projectOverview">
+  <div class="grid">
+
+    <div class="projectSectionLabel">
+      <h2><span>// </span>Overview</h2>
+    </div>
+
+    <p class="projectTextLarge">{{ page.overview }}</p>
+
+    <div class="textBox textBox1">
+      <div class="textOuter">
+        <div class="projectSectionLabel">
+          <h3><span>// </span>Responsibilities</h3>
+        </div>
+        <p class="projectText">{{ page.responsibilities }}</p>
+      </div>
+    </div>
+
+    <div class="textBox textBox2">
+      <div class="textOuter">
+        <div class="projectSectionLabel">
+          <h3><span>// </span>Goals</h3>
+        </div>
+        <p class="projectText">{{ page.goals }}</p>
+      </div>
+    </div>
+
+  </div>
 </section>
+
+
+
+
+
+
+
 
 <ol>
     <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
     <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
 </ol>
-
-<section class="filler"></section>

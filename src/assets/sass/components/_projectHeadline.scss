@@ -150,10 +150,11 @@
                 justify-content: flex-start;
                 padding-bottom: 0;
                 margin-bottom: 2vw;
+                grid-gap: 0;
 
                 .year {
                     text-align: left;
-                    margin-right: 1vw;
+                    margin-right: 4vw;
                 }
 
                 .details {
@@ -192,6 +193,47 @@
     @media screen and (max-width: 640px) {
         padding-top: 6rem;
         padding-bottom: 4rem;
-        .grid { h1 { font-size: 15.5vw; } }
+
+        .grid { 
+            h1 {font-size: 15.5vw; }
+            
+            .textBox {
+                margin-bottom: 2rem;
+                grid-gap: 0;
+
+                .year {
+                    color: $gray100;
+                    margin-right: 1rem;
+                    font-size: 2rem;
+                }
+
+                .details {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: stretch;
+                    justify-content: flex-start;
+                    padding-bottom: 0.5rem;
+                    &.client { margin-top: 0; }
+
+                    .detail {
+                        padding-bottom: 0.25rem;
+                        &.company { margin-right: 1rem; }
+                        &.client { margin-left: 0; }
+
+                        .label {
+                            font-size: 0.6rem;
+                            margin-bottom: 0.3vw;
+                            margin-right: 1vw;
+                            min-width: 0;
+                            transition: color 300ms $inOutQuint 0ms;
+                        }
+        
+                        .name {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

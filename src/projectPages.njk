@@ -41,7 +41,19 @@ eleventyComputed:
   </div>
 </section>
 
-<img src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
+
+
+<section class="projectHero">
+  <div class="grid">
+
+    <div class="imgOuter">
+      <img src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
+    </div>
+
+  </div>
+</section>
+
+
 
 <section class="projectContent">
     {{- page.postContent | safe -}}

@@ -1,0 +1,49 @@
+.projectOutcomes {
+    margin-top: calc(-10rem - 1.2vw);
+
+    .grid {
+        padding-top: 0;
+        padding-bottom: 10rem;
+
+        .projectSectionLabel { grid-column: 4 / span 4; }
+
+        .projectTextLarge {
+            margin-top: 10rem;
+            grid-column: 4 / span 8;
+        }
+    }
+
+
+
+    // 1920 Max Breakpoint
+    @media screen and (min-width: 1920px) {
+        margin-top: -11rem;
+    }
+
+
+
+    // 960 Breakpoint
+    @media screen and (max-width: 960px) {
+        margin-top: 0;
+
+        .grid {
+            padding-top: 3rem;
+            padding-bottom: 6rem;
+
+            .projectTextLarge { margin-top: 0; }
+        }
+    }
+
+
+
+    // 640 Breakpoint
+    @media screen and (max-width: 640px) {
+
+        .grid {
+            padding-top: 1.5rem;
+            padding-bottom: 4rem;
+            .projectSectionLabel { margin-bottom: 1rem; }
+            .projectTextLarge { margin-top: 0; }
+        }
+    }
+}

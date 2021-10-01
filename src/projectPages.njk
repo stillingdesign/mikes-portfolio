@@ -111,7 +111,7 @@ eleventyComputed:
 
     <div class="textBox">
       <div class="projectSectionLabel">
-        <h3><span>// </span>Discovery</h3>
+        <h4><span>// </span>Discovery</h4>
       </div>
       <p class="projectTextSmall">{{ page.discoveryText }}</p>
     </div>
@@ -127,7 +127,7 @@ eleventyComputed:
 
     <div class="textBox">
       <div class="projectSectionLabel">
-        <h3><span>// </span>Strategy</h3>
+        <h4><span>// </span>Strategy</h4>
       </div>
       <p class="projectTextSmall">{{ page.strategyText }}</p>
     </div>
@@ -151,7 +151,7 @@ eleventyComputed:
 
     <div class="textBox">
       <div class="projectSectionLabel">
-        <h3><span>// </span>Visualization</h3>
+        <h4><span>// </span>Visualization</h4>
       </div>
       <p class="projectTextSmall">{{ page.visualizationText }}</p>
     </div>
@@ -167,7 +167,7 @@ eleventyComputed:
 
     <div class="textBox">
       <div class="projectSectionLabel">
-        <h3><span>// </span>Implementation</h3>
+        <h4><span>// </span>Implementation</h4>
       </div>
       <p class="projectTextSmall">{{ page.implementationText }}</p>
     </div>
@@ -223,6 +223,21 @@ eleventyComputed:
         <img class="imgInner" src="{{ page.outputImage4.url }}" alt="{{ page.outputImage4.altText }}" title="{{ page.outputImage4.altText }}"/>
       </div>
     </div>
+
+  </div>
+</section>
+
+
+
+<!-- Overview -->
+<section class="gridContainer projectOutcomes">
+  <div class="grid">
+
+    <div class="projectSectionLabel">
+      <h5><span>// </span>Outcomes</h5>
+    </div>
+
+    <p class="projectTextLarge">{{ page.outcomes }}</p>
 
   </div>
 </section>

@@ -1,0 +1,79 @@
+.projectProcess {
+
+    .grid {
+        padding-top: 10rem;
+        padding-bottom: 0;
+
+        &.first { padding-top: 8rem; }
+        &.last { padding-bottom: 10rem; }
+
+        .imgOuter {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+            img { max-width: 100%; }
+        }
+
+        .textBox {
+            border-top: 2px solid $gray30;
+
+            .projectSectionLabel {
+                margin-top: 1rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        &.imgLeft {
+            .imgOuter { grid-column: 2 / span 7; }
+            .textBox { grid-column: 10 / span 4; }
+        }
+
+        &.imgRight {
+            .imgOuter { grid-column: 7 / span 7; }
+            .textBox { grid-column: 2 / span 4; }
+        }
+    }
+
+
+
+    // 960 Breakpoint
+    @media screen and (max-width: 960px) {
+        .grid {
+            padding-top: 4rem;
+            padding-bottom: 0;
+            &.first { padding-top: 5.5rem; }
+            &.last { padding-bottom: 6rem; }
+
+            .textBox {
+                border-top: none;
+                .projectSectionLabel { margin-top: 2rem; }
+            }
+
+            &.imgRight {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+
+
+
+    // 640 Breakpoint
+    @media screen and (max-width: 640px) {
+        .grid {
+            padding-top: 2rem;
+            padding-bottom: 0;
+            &.first { padding-top: 3.5rem; }
+            &.last { padding-bottom: 4rem; }
+
+            .textBox {
+                border-top: none;
+                .projectSectionLabel { 
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}

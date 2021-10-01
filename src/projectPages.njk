@@ -48,7 +48,7 @@ eleventyComputed:
   <div class="grid">
 
     <div class="imgOuter">
-      <img src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
+      <img class="imgInner" src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
     </div>
 
   </div>
@@ -89,6 +89,116 @@ eleventyComputed:
 
 
 
+<!-- Content Title -->
+<section class="gridContainer homeCaseStudiesTitle">
+  <div class="grid">
+
+    <h3 class="allCaps lineOne content">Design</h3>
+    <h3 class="allCaps serif lineTwo content">Process</h3>
+
+  </div>
+</section>
+
+
+
+<!-- Discovery -->
+<section class="gridContainer projectProcess">
+  <div class="grid imgLeft first">
+
+    <div class="imgOuter">
+      <img class="imgInner" src="{{ page.discoveryImage.url }}" alt="{{ page.discoveryImage.altText }}"/>
+    </div>
+
+    <div class="textBox">
+      <div class="projectSectionLabel">
+        <h3><span>// </span>Discovery</h3>
+      </div>
+      <p class="projectTextSmall">{{ page.discoveryText }}</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Strategy -->
+<section class="gridContainer projectProcess">
+  <div class="grid imgRight">
+
+    <div class="textBox">
+      <div class="projectSectionLabel">
+        <h3><span>// </span>Strategy</h3>
+      </div>
+      <p class="projectTextSmall">{{ page.strategyText }}</p>
+    </div>
+
+    <div class="imgOuter">
+      <img class="imgInner" src="{{ page.strategyImage.url }}" alt="{{ page.strategyImage.altText }}"/>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Visualization -->
+<section class="gridContainer projectProcess">
+  <div class="grid imgLeft">
+
+    <div class="imgOuter">
+      <img class="imgInner" src="{{ page.visualizationImage.url }}" alt="{{ page.visualizationImage.altText }}"/>
+    </div>
+
+    <div class="textBox">
+      <div class="projectSectionLabel">
+        <h3><span>// </span>Visualization</h3>
+      </div>
+      <p class="projectTextSmall">{{ page.visualizationText }}</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Implementation -->
+<section class="gridContainer projectProcess">
+  <div class="grid imgRight last">
+
+    <div class="textBox">
+      <div class="projectSectionLabel">
+        <h3><span>// </span>Implementation</h3>
+      </div>
+      <p class="projectTextSmall">{{ page.implementationText }}</p>
+    </div>
+
+    <div class="imgOuter">
+      <img class="imgInner" src="{{ page.implementationImage.url }}" alt="{{ page.implementationImage.altText }}"/>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Outcomes Marquee -->
+<section class="marquee">
+  <div class="marqueeTrack">
+
+    <div class="marqueeItem">
+      <p>Outputs + Outcomes +&nbsp;</p>
+    </div>
+
+    <div class="marqueeItem">
+      <p>Outputs + Outcomes +&nbsp;</p>
+    </div>
+
+    <div class="marqueeItem">
+      <p>Outputs + Outcomes +&nbsp;</p>
+    </div>
+
+  </div>
+</section>
 
 
 

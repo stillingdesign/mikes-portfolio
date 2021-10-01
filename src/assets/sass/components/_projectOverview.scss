@@ -108,6 +108,9 @@
         font-size: 1rem;
         margin-bottom: 2rem;
     }
+
+    // 640 Breakpoint
+    @media screen and (max-width: 640px) { font-size: 0.75rem; }
 }
 
 .projectTextLarge {
@@ -136,4 +139,18 @@
 
     // 640 Breakpoint
     @media screen and (max-width: 640px) { font-size: 1.25rem; }
+}
+
+.projectTextSmall {
+    font-size: 1.4vw;
+    line-height: 140%;
+
+    // 1920 Max Breakpoint
+    @media screen and (min-width: 1920px) { font-size: 1.8rem; }
+
+    // 960 Breakpoint
+    @media screen and (max-width: 960px) { font-size: 3.3vw; }
+
+    // 640 Breakpoint
+    @media screen and (max-width: 640px) { font-size: 1.125rem; }
 }

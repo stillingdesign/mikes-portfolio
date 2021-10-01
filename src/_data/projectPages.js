@@ -52,6 +52,54 @@ module.exports = function() {
             item.fields.featuredThumbnail.url = `https:${featuredThumbnailUrl}`;
             item.fields.featuredThumbnail.altText = `${featuredThumbnailAltText}`;
 
+            //Grab Discovery Image Asset
+            let discoveryImgUrl = "";
+            let discoveryImgAltText = "";
+            const discoveryImgId = item.fields.discoveryImage.sys.id;
+            const discoveryImgData = assets.find(function(asset) { return asset.sys.id == discoveryImgId });
+            if (discoveryImgData) {
+                discoveryImgUrl = discoveryImgData.fields.file.url;
+                discoveryImgAltText = discoveryImgData.fields.description;
+            }
+            item.fields.discoveryImage.url = `https:${discoveryImgUrl}`;
+            item.fields.discoveryImage.altText = `${discoveryImgAltText}`;
+
+            //Grab Strategy Image Asset
+            let strategyImgUrl = "";
+            let strategyImgAltText = "";
+            const strategyImgId = item.fields.strategyImage.sys.id;
+            const strategyImgData = assets.find(function(asset) { return asset.sys.id == strategyImgId });
+            if (strategyImgData) {
+                strategyImgUrl = strategyImgData.fields.file.url;
+                strategyImgAltText = strategyImgData.fields.description;
+            }
+            item.fields.strategyImage.url = `https:${strategyImgUrl}`;
+            item.fields.strategyImage.altText = `${strategyImgAltText}`;
+
+            //Grab Visualization Image Asset
+            let visualizationImgUrl = "";
+            let visualizationImgAltText = "";
+            const visualizationImgId = item.fields.visualizationImage.sys.id;
+            const visualizationImgData = assets.find(function(asset) { return asset.sys.id == visualizationImgId });
+            if (visualizationImgData) {
+                visualizationImgUrl = visualizationImgData.fields.file.url;
+                visualizationImgAltText = visualizationImgData.fields.description;
+            }
+            item.fields.visualizationImage.url = `https:${visualizationImgUrl}`;
+            item.fields.visualizationImage.altText = `${visualizationImgAltText}`;
+
+            //Grab Implementation Image Asset
+            let implementationImgUrl = "";
+            let implementationImgAltText = "";
+            const implementationImgId = item.fields.implementationImage.sys.id;
+            const implementationImgData = assets.find(function(asset) { return asset.sys.id == implementationImgId });
+            if (implementationImgData) {
+                implementationImgUrl = implementationImgData.fields.file.url;
+                implementationImgAltText = implementationImgData.fields.description;
+            }
+            item.fields.implementationImage.url = `https:${implementationImgUrl}`;
+            item.fields.implementationImage.altText = `${implementationImgAltText}`;
+
             // Render Nested Assets
             const renderOptions = {
                 renderNode: {

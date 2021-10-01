@@ -1,0 +1,75 @@
+.projectCredits {
+
+    .grid {
+
+        .textBox {
+            grid-column: 2 / span 5;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 1.125rem;
+            row-gap: 0;
+            padding-bottom: 10rem;
+
+            .projectSectionLabel {
+                grid-column: 1 / span 4;
+                border-top: 2px solid $gray30;
+                padding-top: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .teamItem {
+                grid-column: 1 / span 5;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                grid-gap: 1.125rem;
+                align-items: end;
+                row-gap: 0;
+                margin-bottom: 1rem;
+
+                .label {
+                    grid-column: 1 / span 1;
+                    font-family: $mono;
+                    font-size: 1vw;
+                    text-transform: uppercase;
+                    color: $gray50;
+                    padding-bottom: 0.25vw;
+                }
+
+                .name {
+                    grid-column: 2 / span 4;
+                    font-size: 2vw;
+                }
+            }
+        }
+
+        .cta {
+            grid-column: 7 / span 8;
+            background: $gradient;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+
+
+    // 1920 Max Breakpoint
+    @media screen and (min-width: 1920px) {
+        .grid {
+            .textBox {
+                .teamItem {
+                    .label {
+                        font-size: 1rem;
+                        padding-bottom: 0.25rem;
+                    }
+    
+                    .name {
+                        font-size: 2.25rem;
+                    }
+                }
+            }
+        }
+    }
+}

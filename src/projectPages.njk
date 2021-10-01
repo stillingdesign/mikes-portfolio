@@ -193,10 +193,6 @@ eleventyComputed:
       <p>Outputs + Outcomes +&nbsp;</p>
     </div>
 
-    <div class="marqueeItem">
-      <p>Outputs + Outcomes +&nbsp;</p>
-    </div>
-
   </div>
 </section>
 
@@ -229,7 +225,7 @@ eleventyComputed:
 
 
 
-<!-- Overview -->
+<!-- Outcomes -->
 <section class="gridContainer projectOutcomes">
   <div class="grid">
 
@@ -244,8 +240,58 @@ eleventyComputed:
 
 
 
+<!-- Credits -->
+<section class="gridContainer projectCredits">
+  <div class="grid">
 
-<ol>
-    <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
-    <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
-</ol>
+    <div class="textBox">
+      <div class="projectSectionLabel">
+        <h6><span>// </span>Team</h6>
+      </div>
+      <div class="teamItem first">
+        <p class="label">{{ page.teamTitle1 }}:</p>
+        <p class="name">{{ page.teamName1 }}</p>
+      </div>
+      <div class="teamItem">
+        <p class="label">{{ page.teamTitle2 }}:</p>
+        <p class="name">{{ page.teamName2 }}</p>
+      </div>
+      <div class="teamItem">
+        <p class="label">{{ page.teamTitle3 }}:</p>
+        <p class="name">{{ page.teamName3 }}</p>
+      </div>
+      <div class="teamItem">
+        <p class="label">{{ page.teamTitle4 }}:</p>
+        <p class="name">{{ page.teamName4 }}</p>
+      </div>
+      <div class="teamItem last">
+        <p class="label">{{ page.teamTitle5 }}:</p>
+        <p class="name">{{ page.teamName5 }}</p>
+      </div>
+    </div>
+
+    <div class="cta">
+      {% set previousPost = projectPages | getPreviousCollectionItem(page) %}
+      {% set nextPost = projectPages | getNextCollectionItem(page) %}
+      {% set firstPost = projectPages | first %}
+      {% set lastPost = projectPages | last %}
+
+      {% if previousPost %}
+      Previous Blog Post:
+      <a href="{{ previousPost.url }}">{{ previousPost.postTitle }}</a>
+      {% else %}
+        Previous Project: <a href="{{ lastPost.url }}">{{ lastPost.postTitle }}</a>
+      {% endif %}
+
+
+      {% if nextPost %}
+      Next Project: <a href="{{ nextPost.url }}">{{ nextPost.postTitle }}</a>
+      {% else %}
+        Next Blog Post: <a href="{{ firstPost.url }}">{{ firstPost.postTitle }}</a>
+      {% endif %}
+
+
+    </div>
+
+  </div>
+</section>

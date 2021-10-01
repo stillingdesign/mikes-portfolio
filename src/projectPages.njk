@@ -276,20 +276,29 @@ eleventyComputed:
       {% set firstPost = projectPages | first %}
       {% set lastPost = projectPages | last %}
 
-      {% if previousPost %}
-      Previous Blog Post:
-      <a href="{{ previousPost.url }}">{{ previousPost.postTitle }}</a>
-      {% else %}
-        Previous Project: <a href="{{ lastPost.url }}">{{ lastPost.postTitle }}</a>
-      {% endif %}
-
-
       {% if nextPost %}
-      Next Project: <a href="{{ nextPost.url }}">{{ nextPost.postTitle }}</a>
-      {% else %}
-        Next Blog Post: <a href="{{ firstPost.url }}">{{ firstPost.postTitle }}</a>
+        <a href="{{ nextPost.url }}" class="project next" style="background-color: {{ nextPost.projectColor }} ;">
+          <p>Next Project:</p>
+          <p>{{ nextPost.postTitle }}</p>
+        </a>
+        {% else %}
+        <a href="{{ firstPost.url }}" class="project next" style="background-color: {{ firstPost.projectColor }} ;">
+          <p>First Project:</p>
+          <p>{{ firstPost.postTitle }}</p>
+        </a>
       {% endif %}
 
+      {% if previousPost %}
+        <a href="{{ previousPost.url }}" class="project previous" style="background-color: {{ previousPost.projectColor }} ;">
+          <p>Previous Project:</p>
+          <p>{{ previousPost.postTitle }}</p>
+        </a>
+        {% else %}
+        <a href="{{ lastPost.url }}" class="project next" style="background-color: {{ lastPost.projectColor }} ;">
+          <p>Last Project:</p>
+          <p>{{ lastPost.postTitle }}</p>
+        </a>
+      {% endif %}
 
     </div>
 

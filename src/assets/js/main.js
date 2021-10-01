@@ -199,6 +199,7 @@ imagesLoaded( 'body', function() {
 barba.hooks.after(() => {
     marqueeAnimate();
     spinTextAnimate();
+    experienceToggle();
     ScrollTrigger.matchMedia({
         "(min-width: 960px)": function() {
             heroImgInnerAnimate();

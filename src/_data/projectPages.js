@@ -100,6 +100,51 @@ module.exports = function() {
             item.fields.implementationImage.url = `https:${implementationImgUrl}`;
             item.fields.implementationImage.altText = `${implementationImgAltText}`;
 
+            //Grab Output Image Asset
+            let outputImg1Url = "";
+            let outputImg1AltText = "";
+            const outputImg1Id = item.fields.outputImage1.sys.id;
+            const outputImg1Data = assets.find(function(asset) { return asset.sys.id == outputImg1Id });
+            if (outputImg1Data) {
+                outputImg1Url = outputImg1Data.fields.file.url;
+                outputImg1AltText = outputImg1Data.fields.description;
+            }
+            item.fields.outputImage1.url = `https:${outputImg1Url}`;
+            item.fields.outputImage1.altText = `${outputImg1AltText}`;
+
+            let outputImg2Url = "";
+            let outputImg2AltText = "";
+            const outputImg2Id = item.fields.outputImage2.sys.id;
+            const outputImg2Data = assets.find(function(asset) { return asset.sys.id == outputImg2Id });
+            if (outputImg2Data) {
+                outputImg2Url = outputImg2Data.fields.file.url;
+                outputImg2AltText = outputImg2Data.fields.description;
+            }
+            item.fields.outputImage2.url = `https:${outputImg2Url}`;
+            item.fields.outputImage2.altText = `${outputImg2AltText}`;
+
+            let outputImg3Url = "";
+            let outputImg3AltText = "";
+            const outputImg3Id = item.fields.outputImage3.sys.id;
+            const outputImg3Data = assets.find(function(asset) { return asset.sys.id == outputImg3Id });
+            if (outputImg3Data) {
+                outputImg3Url = outputImg3Data.fields.file.url;
+                outputImg3AltText = outputImg3Data.fields.description;
+            }
+            item.fields.outputImage3.url = `https:${outputImg3Url}`;
+            item.fields.outputImage3.altText = `${outputImg3AltText}`;
+
+            let outputImg4Url = "";
+            let outputImg4AltText = "";
+            const outputImg4Id = item.fields.outputImage4.sys.id;
+            const outputImg4Data = assets.find(function(asset) { return asset.sys.id == outputImg4Id });
+            if (outputImg4Data) {
+                outputImg4Url = outputImg4Data.fields.file.url;
+                outputImg4AltText = outputImg4Data.fields.description;
+            }
+            item.fields.outputImage4.url = `https:${outputImg4Url}`;
+            item.fields.outputImage4.altText = `${outputImg4AltText}`;
+
             // Render Nested Assets
             const renderOptions = {
                 renderNode: {

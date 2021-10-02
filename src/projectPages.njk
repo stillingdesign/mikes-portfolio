@@ -278,25 +278,57 @@ eleventyComputed:
 
       {% if nextPost %}
         <a href="{{ nextPost.url }}" class="project next" style="background-color: {{ nextPost.projectColor }} ;">
-          <p>Next Project:</p>
-          <p>{{ nextPost.postTitle }}</p>
+          <div class="innerGrid">
+            <p class="projectSectionLabel">Next Project:</p>
+            <div class="arrow">
+              <svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 1L32 17L16 33"/>
+                <path d="M32 17H0"/>
+              </svg>
+            </div>
+            <p class="name">{{ nextPost.postTitle }}</p>
+          </div>
         </a>
         {% else %}
         <a href="{{ firstPost.url }}" class="project next" style="background-color: {{ firstPost.projectColor }} ;">
-          <p>First Project:</p>
-          <p>{{ firstPost.postTitle }}</p>
+          <div class="innerGrid">
+            <p class="projectSectionLabel">Next Project:</p>
+            <div class="arrow">
+              <svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 1L32 17L16 33"/>
+                <path d="M32 17H0"/>
+              </svg>
+            </div>
+            <p class="name">{{ firstPost.postTitle }}</p>
+          </div>
         </a>
       {% endif %}
 
       {% if previousPost %}
         <a href="{{ previousPost.url }}" class="project previous" style="background-color: {{ previousPost.projectColor }} ;">
-          <p>Previous Project:</p>
-          <p>{{ previousPost.postTitle }}</p>
+          <div class="innerGrid">
+            <p class="projectSectionLabel">Previous Project:</p>
+            <div class="arrow">
+              <svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 1L1 17L17 33"/>
+                <path d="M1 17H33"/>
+              </svg>
+            </div>
+            <p class="name">{{ previousPost.postTitle }}</p>
+          </div>
         </a>
         {% else %}
-        <a href="{{ lastPost.url }}" class="project next" style="background-color: {{ lastPost.projectColor }} ;">
-          <p>Last Project:</p>
-          <p>{{ lastPost.postTitle }}</p>
+        <a href="{{ lastPost.url }}" class="project previous" style="background-color: {{ lastPost.projectColor }} ;">
+          <div class="innerGrid">
+            <p class="projectSectionLabel">Previous Project:</p>
+            <div class="arrow">
+              <svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 1L1 17L17 33"/>
+                <path d="M1 17H33"/>
+              </svg>
+            </div>
+            <p class="name">{{ lastPost.postTitle }}</p>
+          </div>
         </a>
       {% endif %}
 

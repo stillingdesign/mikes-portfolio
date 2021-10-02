@@ -48,10 +48,84 @@
             display: flex;
             flex-direction: column;
             align-items: stretch;
-            justify-content: stretch;
+            justify-content: center;
 
             .project {
                 height: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                justify-content: center;
+                color: $gray100;
+
+                .innerGrid {
+                    display: grid;
+                    grid-template-columns: repeat(8, 1fr);
+                    grid-gap: 1.125rem;
+                    align-items: center;
+                    row-gap: 0;
+    
+                    .projectSectionLabel {
+                        grid-column: 3 / span 5;
+                        margin-bottom: 0.5rem;
+                        color: rgba(255,255,255,0.3);
+                    }
+    
+                    .arrow {
+                        grid-column: 2 / span 1;
+                        transition: transform 200ms $inOutQuint 0ms;
+    
+                        svg {
+                            width: 3vw;
+                            fill: none;
+                            stroke-width: 2px;
+                            stroke: $gray100;
+                            stroke-linejoin: bevel;
+                        }
+                    }
+    
+                    .name {
+                        grid-column: 3 / span 5;
+                        font-size: 4vw;
+
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            bottom: -6px;
+                            left: 0;
+                            width: 100%;
+                            height: 2px;
+                            background-color: rgba(255,255,255,0.3);
+                        }
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            bottom: -6px;
+                            left: 0;
+                            width: 0;
+                            height: 2px;
+                            background-color: $gray100;
+                            transition: width 400ms $inOutQuint 0ms;
+                        }
+                    }
+                }
+
+                @media (hover: hover) {
+                    &:hover {
+                        .innerGrid {
+                            .arrow {
+                                transform: translateX(1rem);
+                                transition: transform 400ms $inOutQuint 0ms;
+                            }
+
+                            .name:after {
+                                width: 100%;
+                                transition: width 600ms $inOutQuint 0ms;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -70,6 +144,112 @@
     
                     .name {
                         font-size: 2.25rem;
+                    }
+                }
+            }
+
+            .cta {
+                .project {
+                    .innerGrid {
+                        .arrow {
+                            svg { width: 3.5rem; }
+                        }
+        
+                        .name { font-size: 4.75rem; }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    // 960 Breakpoint
+    @media screen and (max-width: 960px) {
+        padding-left: 0;
+        padding-right: 0;
+
+        .grid {
+            flex-direction: column;
+
+            .textBox {
+                width: 100%;
+                padding-left: 3rem;
+                padding-right: 3rem;
+                padding-bottom: 6rem;
+
+                .projectSectionLabel { grid-column: 1 / span 5; }
+
+                .teamItem {
+                    .label {
+                        font-size: 1rem;
+                        padding-bottom: 0.25rem;
+                    }
+    
+                    .name {
+                        font-size: 2.25rem;
+                    }
+                }
+            }
+
+            .cta {
+                width: 100%;
+
+                .project {
+                    .innerGrid {
+                        padding: 4rem 3rem 4.5rem 3rem;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: center;
+                        .arrow { display: none; }
+        
+                        .name {
+                            font-size: 12vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    // 640 Breakpoint
+    @media screen and (max-width: 640px) {
+
+        .grid {
+
+            .textBox {
+                width: 100%;
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+                padding-bottom: 2rem;
+
+                .teamItem {
+                    grid-column: 1 / span 5;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    margin-bottom: 1.5rem;
+
+                    .label {
+                        font-size: 0.75rem;
+                        padding-bottom: 0.5rem;
+                    }
+    
+                    .name {
+                        font-size: 1.75rem;
+                    }
+                }
+            }
+
+            .cta {
+                .project {
+                    .innerGrid {
+                        padding: 4rem 1.25rem 4.5rem 1.25rem;
+                        .name { font-size: 14vw; }
                     }
                 }
             }

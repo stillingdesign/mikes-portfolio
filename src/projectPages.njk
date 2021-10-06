@@ -10,9 +10,10 @@ layout: base.njk
 
 eleventyComputed:
   title: "{{- page.postTitle -}}"
+  metaTitle: "{{- page.metaTitle -}}"
   url: "/projects/{{- page.slug | slug -}}/"
   description: "{{- page.metaDescription -}}"
-  image: "{{- page.heroImage.url -}}"
+  image: "{{- page.metaImage.url -}}"
   barba: "{{- page.postTitle | slug -}}"
 ---
 

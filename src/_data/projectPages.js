@@ -26,7 +26,7 @@ module.exports = function() {
             const metaImgId = item.fields.metaImage.sys.id;
             const metaImgData = assets.find(function(asset) { return asset.sys.id == metaImgId });
             if (metaImgData) { metaImgUrl = metaImgData.fields.file.url; }
-            item.fields.metaImage = `https:${metaImgUrl}`;
+            item.fields.metaImage.url = `https:${metaImgUrl}`;
 
             //Grab Hero Image Asset
             let heroImgUrl = "";

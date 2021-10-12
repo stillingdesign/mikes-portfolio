@@ -1,0 +1,108 @@
+.projectsHeadline {
+    padding-top: 5rem;
+    padding-bottom: 10rem;
+
+    .grid {
+
+        h1 {
+            grid-column: 2 / span 7;
+            font-size: 6.7vw;
+            line-height: 110%;
+            .serif { font-size: 0.85em; }
+        }
+
+        .textBox {
+            grid-column: 9 / span 5;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-end;
+            text-align: right;
+
+            .label {
+                font-family: $mono;
+                text-transform: uppercase;
+                margin-bottom: 2vw;
+                font-size: 1rem;
+                color: $gray50;
+            }
+
+            .year {
+                font-size: 6.7vw;
+                line-height: 110%;
+                text-align: right;
+                color: $gray0;
+            }
+        }
+    }
+
+
+
+    //1920 Max Breakpoint
+    @media screen and (min-width: 1920px) {
+        .grid {
+            h1 { font-size: 128px; }
+
+            .textBox {
+                .year { font-size: 128px; }
+                .label { margin-bottom: 2.125rem; }
+            }
+        }
+    }
+
+
+
+    //960 Breakpoint
+    @media screen and (max-width: 960px) {
+        padding-top: 3rem;
+        padding-bottom: 6rem;
+
+        .grid {
+            flex-direction: column-reverse;
+
+            h1 { font-size: 12vw; }
+
+            .textBox {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: flex-end;
+                justify-content: flex-start;
+                padding-bottom: 0;
+                margin-bottom: 2vw;
+                grid-gap: 0;
+                text-align: left;
+
+                .year { margin-right: 4vw; }
+                .label { margin-bottom: 1.5vw; }
+            }
+        }
+    }
+
+
+
+    //640 Breakpoint
+    @media screen and (max-width: 640px) {
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+
+        .grid { 
+            h1 {font-size: 15.5vw; }
+            
+            .textBox {
+                margin-bottom: 2rem;
+                grid-gap: 0;
+
+                .year {
+                    color: $gray100;
+                    margin-right: 1rem;
+                    font-size: 2rem;
+                }
+
+                .label {
+                    font-size: 0.75rem;
+                    margin-bottom: 0.4rem;
+                }
+            }
+        }
+    }
+}

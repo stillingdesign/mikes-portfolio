@@ -10,13 +10,37 @@ eleventyComputed:
   barba: "projects"
 ---
 
-<h1> Hello World </h1>
-<p> This is the work page</p>
+<!-- Headline -->
+<section class="gridContainer projectsHeadline">
+  <div class="grid">
 
-<ul>
-    {% for page in projectPages %}
-        <li><a href="/projects/{{ page.slug | url }}">{{page.postTitle}}</a></li>
-    {% endfor %}
-</ul>
+    <h1>
+      <span class="serif">Select</span> Design Work by Mike
+    </h1>
 
-<section class="filler"></section>
+    <div class="textBox">
+      <p class="label">Projects</p>
+      <p class="year">2020-2021</p>
+    </div>
+
+  </div>
+</section>
+
+
+{% for page in projectPages | reverse %}
+<section class="gridContainer projectsProject">
+  <div class="grid">
+
+    <div class="textBox">
+      <h2>{{ page.postTitle }}</h2>
+      <p> {{ page.overview }}</p>
+      <a class="linkUnderlineMedium" href="/projects/{{ page.slug | url }}" title="View {{ page.postTitle }} case study">View case study</a>
+    </div>
+
+    <div class="imgOuter">
+      <img class="imgInner" src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
+    </div>
+
+  </div>
+</section>
+{% endfor %}

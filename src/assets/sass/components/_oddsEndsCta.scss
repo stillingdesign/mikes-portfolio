@@ -1,0 +1,108 @@
+.oddsEndsCta {
+    background-color: $gray80;
+    color: $gray10;
+
+    .grid {
+        padding-top: 10rem;
+        padding-bottom: 9rem;
+        align-items: center;
+
+        h3 {
+            grid-column: 2 / span 9;
+
+            .name {
+                display: inline-block;
+                font-size: 8vw;
+                line-height: 100%;
+                font-family: $serif;
+                text-transform: uppercase;
+                transform: translateY(-2vw);
+            }
+
+            .ampersand {
+                display: inline-block;
+                margin: 0 4vw;
+                font-size: 16vw;
+                line-height: 100%;
+                text-transform: uppercase;
+            }
+        }
+
+        .btnContainer {
+            grid-column: 11 / span 3;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+
+
+    //1920 Max Breakpoint
+    @media screen and (min-width: 1920px) {
+        .grid {
+
+            h3 {
+    
+                .name {
+                    font-size: 9.375rem;
+                    transform: translateY(-2.5rem);
+                }
+    
+                .ampersand {
+                    margin: 0 4.75rem;
+                    font-size: 19rem;
+                }
+            }
+        }
+    }
+
+
+
+    //960 Max Breakpoint
+    @media screen and (max-width: 960px) {
+        .grid {
+            padding-top: 5rem;
+            padding-bottom: 6rem;
+
+            h3 {
+                margin-bottom: 1vw;
+
+                .name {
+                    font-size: 11vw;
+                    transform: translateY(-3.25vw);
+                }
+    
+                .ampersand {
+                    margin: 0 4vw;
+                    font-size: 24vw;
+                }
+            }
+        }
+    }
+
+
+
+    //640 Max Breakpoint
+    @media screen and (max-width: 640px) {
+        .grid {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+
+            h3 {
+                margin-bottom: 1vw;
+
+                .name {
+                    font-size: 13vw;
+                    transform: translateY(-2.75vw);
+                }
+    
+                .ampersand {
+                    margin: 0 2vw;
+                    font-size: 24vw;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,120 @@
+.oddsEndsHero {
+    padding-top: 2rem;
+    padding-bottom: 10rem;
+
+    .grid {
+        align-items: center;
+
+        h1 {
+            //border: 1px solid red;
+            grid-column: 1 / span 14;
+            text-align: center;
+
+            &.name {
+                font-size: 10vw;
+                line-height: 100%;
+                font-family: $serif;
+                text-transform: uppercase;
+                //transform: translateY(-2vw);
+            }
+
+            &.odds {
+                grid-column: 2 / span 4;
+                text-align: left;
+            }
+
+            &.ends {
+                grid-column: 10 / span 4;
+                text-align: right;
+            }
+
+            &.ampersand {
+                grid-column: 6 / span 4;
+                font-size: 25vw;
+                line-height: 100%;
+                text-transform: uppercase;
+            }
+        }
+
+        h2 {
+            //border: 1px solid red;
+            margin-top: 6vw;
+            font-size: 2vw;
+            text-align: center;
+            text-transform: uppercase;
+            grid-column: 2 / span 12;
+            letter-spacing: 0.02em;
+        }
+    }
+
+
+
+    //1920 Max Breakpoint
+    @media screen and (min-width: 1920px) {
+        .grid {
+
+            h1 {
+                &.name { font-size: 12rem; }
+                &.ampersand { font-size: 30rem; }
+            }
+
+            h2 {
+                margin-top: 7rem;
+                font-size: 2.25rem;
+            }
+        }
+    }
+
+
+
+    //960 Max Breakpoint
+    @media screen and (max-width: 960px) {
+        padding-top: 3rem;
+        padding-bottom: 6rem;
+
+        .grid {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            h1 {
+                &.name { font-size: 12vw; }
+                &.ampersand { font-size: 25vw; }
+            }
+
+            h2 {
+                margin-top: 2vw;
+                font-size: 2.25vw;
+                width: 100%;
+            }
+        }
+    }
+
+
+
+    //640 Max Breakpoint
+    @media screen and (max-width: 640px) {
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+
+        .grid {
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            h1 {
+                width: 100%;
+                &.name { font-size: 30vw; }
+                &.odds, &.ends { text-align: center; }
+                &.ampersand { font-size: 60vw; }
+            }
+
+            h2 {
+                margin-top: 4vw;
+                font-size: 8vw;
+                width: 100%;
+                line-height: 120%;
+            }
+        }
+    }
+}

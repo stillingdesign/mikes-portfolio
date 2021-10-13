@@ -76,6 +76,11 @@ a {
     border-radius: 1.5rem;
     overflow: hidden;
 
+    &.btnDark {
+        color: $gray10;
+        transition: color 400ms $inOutQuint 0ms;
+    }
+
     &:before {
         content: '';
         position: absolute;

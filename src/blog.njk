@@ -15,18 +15,19 @@ eleventyComputed:
   <div class="marqueeTrack">
 
     <div class="marqueeItem">
-      <p>Content</p>
-      <div class="marqueeDot"></div>
+      <p>Blog &nbsp;</p>
     </div>
 
     <div class="marqueeItem">
-      <p>Blog</p>
-      <div class="marqueeDot"></div>
+      <p>Blog &nbsp;</p>
     </div>
 
     <div class="marqueeItem">
-      <p>Content</p>
-      <div class="marqueeDot"></div>
+      <p>Blog &nbsp;</p>
+    </div>
+
+    <div class="marqueeItem">
+      <p>Blog &nbsp;</p>
     </div>
 
     <div class="marqueeItem">
@@ -39,22 +40,22 @@ eleventyComputed:
 
 
 <!-- Featured -->
-{% set firstPost = blogPosts | first %}
+{% set latestPost = blogPosts | last %}
 
 <section class="gridContainer contentFeaturedHeadline">
-  <div class="grid">
+  <div class="grid title">
 
-    <h2><a href="/blog/{{ firstPost.slug | url }}" title="Read {{ firstPost.postTitle }}">{{ firstPost.postTitle }}</a></h2>
+    <h2><a href="/blog/{{ latestPost.slug | url }}" title="Read {{ latestPost.postTitle }}">{{ latestPost.postTitle }}</a></h2>
 
     <div class="btnContainer">
-      <a class="btn" href="/blog/{{ firstPost.slug | url }}" title="Read {{ firstPost.postTitle }}">Read more</a>
+      <a class="btn" href="/blog/{{ latestPost.slug | url }}" title="Read {{ latestPost.postTitle }}">Read more</a>
     </div>
 
   </div>
-  <div class="grid">
+  <div class="grid img">
 
     <div class="imgOuter">
-      <img class="imgInner" src="{{ firstPost.heroImage.url }}" />
+      <img class="imgInner" src="{{ latestPost.heroImage.url }}" />
     </div>
 
   </div>
@@ -62,10 +63,20 @@ eleventyComputed:
 
 
 
-<ul>
-    {% for page in blogPosts %}
-        <li><a href="/blog/{{ page.slug | url }}">{{page.postTitle}}</a></li>
-    {% endfor %}
-</ul>
+{% for page in blogPosts.slice(0, 3) | reverse %}
+<section class="gridContainer blogThumbnail">
+  <div class="grid">
 
-<section class="filler"></section>
+    <div class="imgOuter">
+      <img class="imgInner" src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
+    </div>
+
+    <div class="textBox">
+      <h2>{{ page.postTitle }}</h2>
+      <p> {{ page.overview }}</p>
+      <a class="linkUnderlineMedium dark" href="/blog/{{ page.slug | url }}" title="Read {{ page.postTitle }}">Read more</a>
+    </div>
+
+  </div>
+</section>
+{% endfor %}

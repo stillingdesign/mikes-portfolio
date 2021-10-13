@@ -43,9 +43,15 @@ a {
         transition: width 500ms $inOutQuint 0ms;
     }
 
+    &.dark {
+        color: $gray10;
+        &:before { background-color: $gray10; }
+    }
+
     @media (hover: hover) {
         &:hover {
             color: $gray100;
+            &.dark { color: $gray10; }
 
             &:before {
                 width: 0;

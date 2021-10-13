@@ -10,7 +10,7 @@
 @import 'components/header';
 @import 'components/footer';
 @import 'components/mobileNav';
-@import 'components/blogPosts';
+@import 'components/blogPost';
 @import 'components/watermarks';
 
 // Home Page
@@ -19,7 +19,7 @@
 @import 'components/homeIntro';
 @import 'components/homeCaseStudies';
 @import 'components/homeQualifications';
-@import 'components/homeContent';
+@import 'components/homeBlog';
 @import 'components/homeClosing';
 @import 'components/homeContact';
 @import 'components/homeDecorations';
@@ -38,7 +38,8 @@
 @import 'components/projectCredits';
 
 // Content
-@import 'components/contentFeatured';
+@import 'components/blogFeatured';
+@import 'components/blogThumbnail';
 
 // Odds and Ends
 @import 'components/oddsEndsHero';

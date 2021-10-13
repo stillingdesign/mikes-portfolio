@@ -10,8 +10,57 @@ eleventyComputed:
   barba: "blog"
 ---
 
-<h1> Hello World </h1>
-<p> This is the blog page</p>
+<!-- Marquee -->
+<section class="marquee contentMarquee">
+  <div class="marqueeTrack">
+
+    <div class="marqueeItem">
+      <p>Content</p>
+      <div class="marqueeDot"></div>
+    </div>
+
+    <div class="marqueeItem">
+      <p>Blog</p>
+      <div class="marqueeDot"></div>
+    </div>
+
+    <div class="marqueeItem">
+      <p>Content</p>
+      <div class="marqueeDot"></div>
+    </div>
+
+    <div class="marqueeItem">
+      <p>Blog</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Featured -->
+{% set firstPost = blogPosts | first %}
+
+<section class="gridContainer contentFeaturedHeadline">
+  <div class="grid">
+
+    <h2><a href="/blog/{{ firstPost.slug | url }}" title="Read {{ firstPost.postTitle }}">{{ firstPost.postTitle }}</a></h2>
+
+    <div class="btnContainer">
+      <a class="btn" href="/blog/{{ firstPost.slug | url }}" title="Read {{ firstPost.postTitle }}">Read more</a>
+    </div>
+
+  </div>
+  <div class="grid">
+
+    <div class="imgOuter">
+      <img class="imgInner" src="{{ firstPost.heroImage.url }}" />
+    </div>
+
+  </div>
+</section>
+
+
 
 <ul>
     {% for page in blogPosts %}

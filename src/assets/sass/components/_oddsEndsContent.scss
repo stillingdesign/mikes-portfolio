@@ -1,0 +1,96 @@
+.oddsEndsContent {
+
+    .grid {
+
+        p {
+            font-size: 2vw;
+            text-align: center;
+            text-transform: uppercase;
+            grid-column: 2 / span 12;
+            letter-spacing: 0.02em;
+            margin-top: 10rem;
+            margin-bottom: 20rem;
+        }
+
+        .imgOuter {
+            overflow: hidden;
+            margin-bottom: 10rem;
+
+            .imgInner {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .video { cursor: pointer; }
+
+            &:nth-child(even) {
+                grid-column: 2 / span 5;
+                margin-top: -50%;
+            }
+            
+            &:nth-child(odd) {
+                grid-column: 9 / span 5;
+                margin-top: 25%;
+            }
+
+            &:first-child {
+                grid-column: 2 / span 12;
+                margin-top: 0;
+            }
+
+            &:nth-child(2) { margin-top: 0; }
+            &:nth-child(3) { margin-top: 75%; }
+            &:last-child { margin-bottom: 0; }
+        }
+    }
+
+
+
+    //1920 Max Breakpoint
+    @media screen and (min-width: 1920px) {
+        .grid {
+            p { font-size: 2.25rem; }
+        }
+    }
+
+
+
+    //960 Breakpoint
+    @media screen and (max-width: 960px) {
+        .grid {
+            p {
+                font-size: 2.25vw;
+                width: 100%;
+            }
+    
+            .imgOuter {
+                overflow: hidden;
+                margin-bottom: 3rem;
+    
+                &:nth-child(even),
+                &:nth-child(odd),
+                &:first-child,
+                &:nth-child(2),
+                &:nth-child(3) { margin-top: 0; }
+            }
+        }
+    }
+
+
+
+    //640 Breakpoint
+    @media screen and (max-width: 640px) {
+        .grid {
+            p {
+                font-size: 8vw;
+                margin-top: 15rem;
+                margin-bottom: 15rem;
+            }
+    
+            .imgOuter {
+                overflow: hidden;
+                margin-bottom: 1.25rem;
+            }
+        }
+    }
+}

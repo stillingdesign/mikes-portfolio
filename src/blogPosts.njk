@@ -20,9 +20,32 @@ eleventyComputed:
 <section class="gridContainer blogPostHeadline">
   <div class="grid">
 
-    <h1>
-      {{ page.postTitle }}
-    </h1>
+    <div class="textBox">
+
+      <a href="/blog/" class="back">
+        <div class="backIcon">
+          <svg viewBox="0 0 33 26" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 1L1 13L13 25"/>
+            <path d="M1 13H33"/>
+          </svg> 
+        </div>         
+        <p>All Content</p>
+      </a>
+
+      <div class="notes">
+        <div class="note author">
+          <p class="label">Author:</p>
+          <p class="name">Mike Stilling</p>
+        </div>
+        <div class="note">
+          <p class="label">Created:</p>
+          <p class="name">{{ page.postDate }}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <h1>{{ page.postTitle }}</h1>
     
   </div>
 </section>

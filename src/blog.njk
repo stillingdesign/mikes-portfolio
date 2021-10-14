@@ -10,42 +10,20 @@ eleventyComputed:
   barba: "blog"
 ---
 
-<!-- Marquee -->
-<section class="marquee contentMarquee">
-  <div class="marqueeTrack">
-
-    <div class="marqueeItem">
-      <p>Blog &nbsp;</p>
-    </div>
-
-    <div class="marqueeItem">
-      <p>Blog &nbsp;</p>
-    </div>
-
-    <div class="marqueeItem">
-      <p>Blog &nbsp;</p>
-    </div>
-
-    <div class="marqueeItem">
-      <p>Blog &nbsp;</p>
-    </div>
-
-    <div class="marqueeItem">
-      <p>Blog</p>
-    </div>
-
-  </div>
-</section>
-
 
 
 <!-- Featured -->
 {% set latestPost = blogPosts | last %}
-
-<section class="gridContainer contentFeaturedHeadline">
+<section class="gridContainer blogFeaturedHeadline">
   <div class="grid title">
 
-    <h2><a href="/blog/{{ latestPost.slug | url }}" title="Read {{ latestPost.postTitle }}">{{ latestPost.postTitle }}</a></h2>
+    <div class="notes">
+      <p class="label">Blog</p>
+      <p class="dot">•</p>
+      <p class="date">{{ latestPost.postDate }}</p>
+    </div>
+
+    <h1><a href="/blog/{{ latestPost.slug | url }}" title="Read {{ latestPost.postTitle }}">{{ latestPost.postTitle }}</a></h1>
 
     <div class="btnContainer">
       <a class="btn" href="/blog/{{ latestPost.slug | url }}" title="Read {{ latestPost.postTitle }}">Read more</a>
@@ -63,6 +41,18 @@ eleventyComputed:
 
 
 
+<!-- All Content -->
+<section class="gridContainer blogAllContent">
+  <div class="grid">
+
+    <h3>All Content</h3>
+    <h4>Editorials + Tutorials</h4>
+
+  </div>
+</section>
+
+
+
 {% for page in blogPosts.slice(0, 3) | reverse %}
 <section class="gridContainer blogThumbnail">
   <div class="grid">
@@ -70,6 +60,10 @@ eleventyComputed:
     <div class="imgOuter">
       <img class="imgInner" src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
     </div>
+
+    <p class="date">
+      {{ page.postDate }}
+    </p>
 
     <div class="textBox">
       <h2>{{ page.postTitle }}</h2>

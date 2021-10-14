@@ -28,7 +28,7 @@ header {
             display: flex;
             flex-direction: row;
             align-items: flex-start;
-            justify-content: space-between;
+            justify-content: flex-end;
             
             a {
                 display: flex;
@@ -39,6 +39,8 @@ header {
                 height: 100%;
                 color: $gray70;
                 line-height: 100%;
+
+                &.pad {margin-right: 4rem;}
 
                 .navLabel {
                     display: inline-flex;

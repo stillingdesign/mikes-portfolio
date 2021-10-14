@@ -1,17 +1,38 @@
-.contentFeaturedHeadline {
+.blogFeaturedHeadline {
     padding-top: 5rem;
-    
+    background: linear-gradient(180deg, $gray10 70%, $gray95 70%);
+
     .grid {
         align-items: end;
 
         &.img {
-            background: linear-gradient(180deg, $gray10 50%, $gray95 50%);
             padding-bottom: 10rem;
         }
 
-        h2 {
+        .notes {
+            grid-column: 2 / span 12;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin-bottom: 1rem;
+
+            .label { text-transform: uppercase; }
+
+            .dot {
+                margin: 0 1rem;
+            }
+
+            .date {
+                font-family: $mono;
+                text-transform: uppercase;
+                transform: translateY(-.15em);
+            }
+        }
+
+        h1 {
             grid-column: 2 / span 9;
-            font-size: 4vw;
+            font-size: 5vw;
             a { color: $gray100; }
         }
 
@@ -20,8 +41,8 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: flex-end;
-            margin-bottom: 0.5vw;
+            justify-content: center;
+            margin-bottom: 0.75vw;
         }
 
         .imgOuter {
@@ -39,7 +60,8 @@
     //1920 Max Breakpoint
     @media screen and (min-width: 1920px) {
         .grid {
-            h2 { font-size: 4.75rem; }
+            h1 { font-size: 6rem; }
+            .btnContainer { margin-bottom: 1rem; }
         }
     }
 
@@ -49,8 +71,7 @@
     @media screen and (max-width: 960px) {
         padding-top: 3rem;
         padding-bottom: 6rem;
-        flex-direction: column-reverse;
-        background: linear-gradient(180deg, $gray10 35%, $gray95 35%);
+        flex-direction: column;
 
         .grid {
             justify-content: flex-start;
@@ -61,27 +82,17 @@
                 background-color: transparent;
             }
 
-            h2 { font-size: 8vw; }
-            h2 a { color: $gray10; }
+            h1 { font-size: 8vw; }
+
 
             .btnContainer {
                 margin-top: 2rem;
                 align-items: flex-start;
                 justify-content: flex-start;
-
-                .btn {
-                    color: $gray10;
-                    transition: color 300ms linear 0ms;
-                    @media (hover: hover) {
-                        &:hover {
-                            color: $gray100;
-                        }
-                    }
-                }
             }
 
             .imgOuter {
-                margin-top: 0;
+                margin-top: 2.5rem;
                 margin-bottom: 2rem;
             }
         }
@@ -91,14 +102,15 @@
 
     //640 Breakpoint
     @media screen and (max-width: 640px) {
-        padding-top: 2rem;
+        padding-top: 6rem;
         padding-bottom: 4rem;
+        background: linear-gradient(180deg, $gray10 75%, $gray95 75%);
 
         .grid {
             justify-content: flex-start;
             align-items: flex-start;
 
-            h2 { font-size: 2.5rem; }
+            h1 { font-size: 3rem; }
 
             .btnContainer { margin-top: 1rem; }
             .imgOuter { margin-bottom: 1.25rem;}

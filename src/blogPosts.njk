@@ -50,31 +50,49 @@ eleventyComputed:
   </div>
 </section>
 
+
+
 <!-- Featured Image -->
 <section class="gridContainer blogPostHeroImg">
   <div class="grid">
 
     <div class="imgOuter">
-      <div class="imgInner">
-        <img src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
-      </div>
+      <img src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
     </div>
     
   </div>
 </section>
 
+
+
 <!-- Blog Content-->
 <section class="gridContainer blogContentContainer">
     <div class="grid">
 
+
       <div class="blogContent">
         {{- page.postContent | safe -}}
-      </div>
 
-      <ol>
-        <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
-        <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
-      </ol>
+        <hr>
+
+        <div class="credits">
+          <div class="author">
+            <img src="/assets/img/mikes-profile.jpg" alt="profile image of Mike Stilling" />
+            <div class="notes">
+              <p class="label">Author</p>
+              <p class="name">Mike Stilling</p>
+              <p class="title">Digital Designer</p>
+            </div>
+          </div>
+          <div class="social">
+            <a href="https://www.instagram.com/mikestilling/" target="_blank" title="Mike's Instagram" rel="noopener noreferrer" class="first">Instagram</a>
+            <a href="https://twitter.com/mikestilling" target="_blank" title="Mike's Twitter" rel="noopener noreferrer">Twitter</a>
+            <a href="https://www.linkedin.com/in/mikestilling/" target="_blank" title="Mike's LinkedIn" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+
+      </div>
+      
 
     </div>
 </section>

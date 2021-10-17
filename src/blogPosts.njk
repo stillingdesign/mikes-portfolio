@@ -96,3 +96,61 @@ eleventyComputed:
 
     </div>
 </section>
+
+
+
+<!-- Prev + Next-->
+{% set previousPost = blogPosts | getPreviousCollectionItem(page) %}
+{% set nextPost = blogPosts | getNextCollectionItem(page) %}
+{% set firstPost = blogPosts | first %}
+{% set lastPost = blogPosts | last %}
+
+<section class="gridContainer blogPrevNext">
+  <div class="grid">
+
+    {% if previousPost %}
+      <a href="{{ previousPost.url }}" title="Read {{ previousPost.postTitle }}" class="article article1">
+        <div class="imgOuter">
+          <img src="{{ previousPost.heroImage.url }}" alt="{{ previousPost.heroImage.altText }}"/>
+        </div>
+        <div class="textBox">
+          <p class="label">Previous</p>
+          <h2>{{ previousPost.postTitle }}</h2>
+        </div>
+      </a>
+      {% else %}
+      <a href="{{ lastPost.url }}" title="Read {{ lastPost.postTitle }}" class="article article1">
+        <div class="imgOuter">
+          <img src="{{ lastPost.heroImage.url }}" alt="{{ lastPost.heroImage.altText }}"/>
+        </div>
+        <div class="textBox">
+          <p class="label">Previous</p>
+          <h2>{{ lastPost.postTitle }}</h2>
+        </div>
+      </a>
+    {% endif %}
+
+    {% if nextPost %}
+      <a href="{{ nextPost.url }}" title="Read {{ nextPost.postTitle }}" class="article article2">
+        <div class="imgOuter">
+          <img src="{{ nextPost.heroImage.url }}" alt="{{ nextPost.heroImage.altText }}"/>
+        </div>
+        <div class="textBox">
+          <p class="label">Next</p>
+          <h2>{{ nextPost.postTitle }}</h2>
+        </div>
+      </a>
+      {% else %}
+      <a href="{{ firstPost.url }}" title="Read {{ firstPost.postTitle }}" class="article article2">
+        <div class="imgOuter">
+          <img src="{{ firstPost.heroImage.url }}" alt="{{ firstPost.heroImage.altText }}"/>
+        </div>
+        <div class="textBox">
+          <p class="label">Next</p>
+          <h2>{{ firstPost.postTitle }}</h2>
+        </div>
+      </a>
+    {% endif %}
+
+  </div>
+</section>

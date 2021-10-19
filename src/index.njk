@@ -314,7 +314,7 @@ eleventyComputed:
 
 
 
-<!-- Content Title -->
+<!-- Blog Title -->
 <section class="gridContainer homeCaseStudiesTitle">
   <div class="grid">
 
@@ -329,8 +329,8 @@ eleventyComputed:
 
 
 
-<!-- Content -->
-<section class="gridContainer homeContent">
+<!-- Blog Posts -->
+<section class="gridContainer homeBlog">
   <div class="grid">
 
     {% for page in blogPosts.slice(0, 4) | reverse %}
@@ -344,9 +344,6 @@ eleventyComputed:
         </div>
 
         <h4>{{page.postTitle}}</h4>
-        <div class="date">
-          <p>{{page.postDate}}</p>
-        </div>
 
       </a>
     </div>

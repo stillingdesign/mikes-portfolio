@@ -230,6 +230,9 @@ barba.init({
                     }
                 });
 
+                mobileNav.classList.remove(`active`);
+                menuIcon.classList.remove(`active`);
+
                 timeline
                     .to(current.container, {duration: 0.5, y: 100, opacity: 0}, 0)
                     .to(current.container, {display: 'none'})

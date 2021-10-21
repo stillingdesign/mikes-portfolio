@@ -1,0 +1,28 @@
+#transitionPanel1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 0;
+    background-color: $gray95;
+    z-index: 100;
+    transition: height 1000ms $inOutQuint 0ms;
+
+    &.active {
+        height: 100vh;
+        transition: height 1000ms $inOutQuint 0ms;
+    }
+
+    @media screen and (max-width: 640px) {
+        width: 0;
+        right: 0;
+        left: auto;
+        height: 100vh;
+        transition: width 1000ms $inOutQuint 0ms;
+
+        &.active {
+            width: 100vw;
+            transition: width 1000ms $inOutQuint 0ms;
+        }
+    }
+}

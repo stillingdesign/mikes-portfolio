@@ -14,9 +14,6 @@ gsap.registerPlugin(Draggable, ScrollToPlugin, ScrollTrigger, InertiaPlugin, Spl
 
 
 
-
-
-
 // Locomotive Scroll
 const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
@@ -29,9 +26,7 @@ const scroll = new LocomotiveScroll({
 
 
 
-
-
-
+// Use Locomotive Scroll with ScrollTrigger
 scroll.on("scroll", ScrollTrigger.update);
 
 ScrollTrigger.scrollerProxy(".locomotive", {
@@ -43,10 +38,6 @@ ScrollTrigger.scrollerProxy(".locomotive", {
   },
   pinType: document.querySelector(".locomotive").style.transform ? "transform" : "fixed"
 });
-
-
-
-
 
 
 
@@ -72,10 +63,6 @@ menuToggle();
 
 
 
-
-
-
-
 // Scroll Trigger Hero Image
 const heroImgInnerAnimate = function () {
     const heroImgInner = document.querySelectorAll('.heroImgInner');
@@ -95,6 +82,8 @@ const heroImgInnerAnimate = function () {
 }
 
 
+
+
 // Footer Marquee
 const footerMarqueeAnimate = function () {
     const footerMarquee = document.querySelector('.footerMarqueeItem');
@@ -104,6 +93,8 @@ const footerMarqueeAnimate = function () {
     const footerMarqueeTL = gsap.timeline({repeat:-1, defaults:{ease:"none"}});
     footerMarqueeTL.to(footerMarqueeTrack,{x:-footerMarqueeItemWidth, duration:20});  
 }
+
+
 
 
 // Scroll Trigger Marquee
@@ -123,6 +114,8 @@ const marqueeAnimate = function () {
         })
     })
 }
+
+
 
 
 // Scroll Trigger Spin
@@ -146,9 +139,6 @@ const spinTextAnimate = function () {
 
 
 
-
-
-
 // Work Experience Dropdown
 const experienceToggle = function () {
     const resumeItems = document.querySelectorAll('.resumeItem');
@@ -167,11 +157,7 @@ const experienceToggle = function () {
         })
     });
 }
-
 experienceToggle();
-
-
-
 
 
 
@@ -195,7 +181,11 @@ imagesLoaded( 'body', function() {
 
 
 
+
 /* Barba */
+
+const transitionPanel1 = document.querySelector('#transitionPanel1');
+
 barba.hooks.after(() => {
     marqueeAnimate();
     spinTextAnimate();
@@ -230,15 +220,24 @@ barba.init({
                     }
                 });
 
+                transitionPanel1.classList.add(`active`);
                 mobileNav.classList.remove(`active`);
                 menuIcon.classList.remove(`active`);
 
                 timeline
-                    .to(current.container, {duration: 0.5, y: 100, opacity: 0}, 0)
+                    .to('footer', {duration: 0.5, opacity: 0}, 0)
+                    .to(current.container, {duration: 0.5, opacity: 0}, 0)
                     .to(current.container, {display: 'none'})
-                    scroll.scrollTo(0, 0);
 
             });
+
+        },
+
+
+
+        beforeEnter({ current, next, trigger }) {
+
+            scroll.scrollTo(0, 0);
 
         },
 
@@ -254,23 +253,42 @@ barba.init({
                 
                 const timeline = gsap.timeline({
                     onComplete() {
+                        transitionPanel1.classList.remove(`active`);
                         resolve();
                     }
                 });
 
                 timeline
+                    .set(current.container, {opacity: 0})
                     .set(next.container, {opacity: 0})
-                    .from(next.container, {duration: 0.5, opacity: 0, y: 100}, 0)
 
             });
-
         },
 
 
 
+        afterEnter({ current, next, trigger }) {
+
+            return new Promise(resolve => {
+                
+                const timeline = gsap.timeline({
+                    onComplete() {
+                        resolve();
+                    }
+                });
+
+                timeline
+                    .to(next.container, {duration: 2, opacity: 1}, 0.5)
+                    .to('footer', {duration: 2, opacity: 1}, 0.5)
+
+            });
+        },
+
+
+        
     }],
 
     views: [{}],
 
-    debug: true
+    //debug: true
 });

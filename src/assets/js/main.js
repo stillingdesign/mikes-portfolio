@@ -89,7 +89,7 @@ const footerMarqueeAnimate = function () {
     const footerMarquee = document.querySelector('.footerMarqueeItem');
     const footerMarqueeTrack = document.querySelector('.footerMarqueeTrack');
     const footerMarqueeItemWidth = footerMarquee.offsetWidth;
-    console.log(footerMarqueeItemWidth);
+    //console.log(footerMarqueeItemWidth);
     const footerMarqueeTL = gsap.timeline({repeat:-1, defaults:{ease:"none"}});
     footerMarqueeTL.to(footerMarqueeTrack,{x:-footerMarqueeItemWidth, duration:20});  
 }
@@ -278,8 +278,8 @@ barba.init({
                 });
 
                 timeline
-                    .to(next.container, {duration: 2, opacity: 1}, 0.5)
-                    .to('footer', {duration: 2, opacity: 1}, 0.5)
+                    .to(next.container, {duration: 1, opacity: 1}, 0.5)
+                    .to('footer', {duration: 1, opacity: 1}, 0.5)
 
             });
         },

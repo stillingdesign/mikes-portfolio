@@ -185,6 +185,7 @@ imagesLoaded( 'body', function() {
 /* Barba */
 
 const transitionPanel1 = document.querySelector('#transitionPanel1');
+const loadPanel = document.querySelector('.loadPanel');
 
 barba.hooks.after(() => {
     marqueeAnimate();
@@ -206,7 +207,40 @@ barba.init({
 
 
 
-        once() {},
+        once({ next }) {
+
+            return new Promise(resolve => {
+
+                const timeline = gsap.timeline({
+                    onComplete() {
+                        deleteSplit();
+                        scroll.update();
+                        resolve();
+                    }
+                });
+
+                const splitHeadline = new SplitText('h1', {type:'words'})
+                function deleteSplit() {
+                    splitHeadline.revert()
+                }
+
+
+                timeline
+                    .set('.load-content', {opacity: 0})
+                    .set('main', {y: 200, opacity: 0})
+                    .set('header', {y: -100, opacity: 0})
+                    .set(splitHeadline.words, {opacity: 0, y: 48})
+                    .to('.load-content', {duration: 1, opacity: 1}, 0.5)
+                    .to('.loadPanel', {duration: 1, height: 0, ease: "power4.inOut"}, '+=1')
+                    .to('.load-content', {duration: 1, opacity: 0}, '-=1')
+                    .to('header', {duration: 1, y: 0, opacity: 1, ease: "power4.out"}, '-=0.5')
+                    .to('main', {duration: 1, y: 0, opacity: 1, ease: "power4.out"}, '-=1')
+                    .to(splitHeadline.words, {duration: 1, y: 0, opacity: 1, ease: "power3.out", stagger: 0.04}, '-=1')
+                    .set('.loadPanel', {opacity: 0, display:'none'})
+
+            });
+            
+        },
 
 
 

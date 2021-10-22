@@ -26,3 +26,65 @@
         }
     }
 }
+
+
+
+.loadPanel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: -moz-available;
+    height: -webkit-fill-available;
+    background-color: $gray95;
+    z-index: 100;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .load-content {
+        transform: scale3d(0.75,0.75,0.75);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .load-mikestilling {
+            margin: 16px 0 8px 0;
+        }
+
+        .load-star {
+            -webkit-animation: rotate 5s linear infinite;
+            -moz-animation:    rotate 5s linear infinite;
+            -o-animation:      rotate 5s linear infinite;
+            animation:         rotate 5s linear infinite;
+        }
+    }
+
+    &.done {
+        height: 0;
+        transition: height 1000ms $inOutQuint 0ms;
+    }
+}
+
+@-webkit-keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@-moz-keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@-o-keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

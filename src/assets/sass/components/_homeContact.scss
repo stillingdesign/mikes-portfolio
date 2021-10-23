@@ -1,6 +1,7 @@
 .homeContact {
+    padding-bottom: 9rem;
+
     .grid {
-        padding-bottom: 9rem;
 
         .divider {
             grid-column: 2 / span 12;
@@ -64,9 +65,9 @@
 
     //960 Breakpoint
     @media screen and (max-width: 960px) {
+        padding-bottom: 8rem;
 
         .grid {
-            padding-bottom: 8rem;
 
             .divider {margin-bottom: 8rem;}
 
@@ -92,9 +93,9 @@
 
     //640 Breakpoint
     @media screen and (max-width: 640px) {
+        padding-bottom: 6rem;
 
         .grid {
-            padding-bottom: 6rem;
             .divider {margin-bottom: 5.5rem;}
 
             p {

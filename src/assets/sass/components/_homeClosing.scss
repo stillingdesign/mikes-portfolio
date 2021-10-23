@@ -6,7 +6,7 @@
 
         .imgOuter {
             grid-column: 2 / span 3;
-            height: 100%;
+            height: auto;
             width: 100%;
             background-color: $gray30;
             background-image: url('../img/smokes.jpg');

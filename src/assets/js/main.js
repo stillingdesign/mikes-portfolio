@@ -63,6 +63,47 @@ menuToggle();
 
 
 
+// Custom cursor
+const cursorAnimate = function () {
+    const cursors = document.querySelector('.cursors')
+    const cursor = cursors.querySelector('.cursor')
+    const cursorLinks = document.querySelectorAll('a, .resumeItem')
+    let cursorX = 0
+    let cursorY = 0
+    let aimX = 0
+    let aimY = 0
+    let speed = 0.2
+
+    const cursorEase = function () {
+        cursorX += (aimX - cursorX) * speed
+        cursorY += (aimY - cursorY) * speed
+
+        cursor.style.left = cursorX + "px"
+        cursor.style.top = cursorY + "px"
+
+        requestAnimationFrame(cursorEase)
+    }
+
+    cursorEase()
+
+    document.addEventListener('mousemove', function (event) {
+        aimX = event.pageX
+        aimY = event.pageY
+    })
+
+    cursorLinks.forEach(cursorLink => {
+        cursorLink.addEventListener('mouseover', function () {
+            cursor.classList.add(`hover`)
+        })
+        cursorLink.addEventListener('mouseout', function () {
+            cursor.classList.remove(`hover`)
+        })
+    })
+}
+
+
+
+
 // Scroll Trigger Hero Image
 const heroImgInnerAnimate = function () {
     const heroImgInner = document.querySelectorAll('.heroImgInner');
@@ -165,6 +206,7 @@ experienceToggle();
 // Update scroll height after Images Load
 imagesLoaded( 'body', function() {
     scroll.update();
+    cursorAnimate();
     footerMarqueeAnimate();
     marqueeAnimate();
     spinTextAnimate();
@@ -191,6 +233,7 @@ barba.hooks.after(() => {
     marqueeAnimate();
     spinTextAnimate();
     experienceToggle();
+    cursorAnimate();
     ScrollTrigger.matchMedia({
         "(min-width: 960px)": function() {
             heroImgInnerAnimate();

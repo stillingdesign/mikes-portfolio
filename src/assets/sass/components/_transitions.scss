@@ -88,3 +88,28 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+.cursors .cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: rgba(228,137,127,0.2);
+    z-index: 1000;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: height 400ms $inOutCubic 0ms, width 400ms $inOutCubic 0ms, border-radius 400ms $inOutCubic 0ms, background-color 400ms $inOutCubic 0ms;
+
+    &.hover {
+        width: 128px;
+        height: 128px;
+        border-radius: 64px;
+        background-color: rgba(71,130,185,0.2);
+        transition: height 500ms $inOutCubic 0ms, width 500ms $inOutCubic 0ms, border-radius 500ms $inOutCubic 0ms, background-color 500ms $inOutCubic 0ms;
+    }
+
+
+    @media screen and (max-width: 1024px) {display: none;}
+}

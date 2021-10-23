@@ -67,7 +67,7 @@ menuToggle();
 const cursorAnimate = function () {
     const cursors = document.querySelector('.cursors')
     const cursor = cursors.querySelector('.cursor')
-    const cursorLinks = document.querySelectorAll('a, .resumeItem')
+    const cursorLinks = document.querySelectorAll('a, video, .resumeItem')
     let cursorX = 0
     let cursorY = 0
     let aimX = 0

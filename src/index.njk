@@ -333,21 +333,7 @@ eleventyComputed:
 <section class="gridContainer homeBlog">
   <div class="grid">
 
-    {% for page in blogPosts.slice(0, 4) | reverse %}
-    <div class="homeArticle">
-      <a href="/blog/{{ page.slug | url }}">
-
-        <div class="imgOuter">
-          <div class="imgInner">
-            <img src="{{ page.heroImage.url }}" alt="{{ page.heroImage.altText }}"/>
-          </div>
-        </div>
-
-        <h4>{{page.postTitle}}</h4>
-
-      </a>
-    </div>
-    {% endfor %}
+    
 
   </div>
 </section>
